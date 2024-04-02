@@ -14,7 +14,9 @@ enum Cols {
     THREE,
 }
 
-const COL_MAP = {
+const COL_MAP: {
+    [key: number]: string
+} = {
     [Cols.TWO]: 'md:grid-cols-2',
     [Cols.THREE]: 'md:grid-cols-3',
 }

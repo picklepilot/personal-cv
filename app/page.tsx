@@ -145,12 +145,11 @@ export default function Home() {
 
                 <ul className="mt-3 max-w-lg list-disc space-y-3 pl-5 text-zinc-600">
                     <li>
-                        Absolutely design/build some more TailwindUI components
-                        and use those components to build
-                        beautiful/accessible/compliant web properties. I love
-                        nothing more than feeling that "click" of "this is what
-                        it's supposed to be" and then entering robot-mode to
-                        just construct.
+                        Design/build some more TailwindUI components and use
+                        those components to build beautiful/accessible/compliant
+                        web properties. I love nothing more than feeling that
+                        "click" of "this is what it's supposed to be" and then
+                        entering robot-mode to just construct.
                     </li>
                     <li>
                         Get some more Vuejs representation in the templates
@@ -175,7 +174,7 @@ export default function Home() {
                         achieve more complex business UIs
                         <ul className="mt-3 max-w-lg list-disc space-y-3 pl-5 text-zinc-600">
                             <li>Interesting ways of visualizing KPIs</li>
-                            <li>Complex query builder</li>
+                            <li>Complex query builder shell</li>
                             <li>Advance the dashboard-eque templates</li>
                             <li>
                                 I have a fascination with virtualized tables,
@@ -248,6 +247,10 @@ export default function Home() {
                     <li>
                         Write a generalized TS based datasource for tabular data
                         that can be used by any standard JSON REST API
+                    </li>
+                    <li>
+                        Prototype project "Should We Use," using Catalyst
+                        components where available!
                     </li>
                 </ul>
             </PageSection>

@@ -7,7 +7,8 @@ A quick and informative look into my background, skills, and projects. This proj
 - TypeScript
 
 ## TODO
-- [ ] Crunch image sizes
-- [ ] Finalize the rotating hero text
+- [ ] Rotate FA code 🤦🏻
+- [ ] Wrap all `<img>` in `<Image>` component
+- [x] Finalize the rotating hero text
 - [ ] Make sure the site is fully responsive
 - [ ] Fix some overzealous paddings/margins
