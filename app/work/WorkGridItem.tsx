@@ -33,10 +33,10 @@ export default function WorkGridItem(props: any) {
                     </span>
                 )}
             </h2>
-            <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+            <p className="relative z-10 mb-6 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
                 {project.blurb}
             </p>
-            <p className="relative z-10 mt-6 flex items-center space-x-1.5 text-sm font-medium text-zinc-400 transition group-hover:text-sky-500 dark:text-zinc-200">
+            <p className="relative z-10 mt-auto flex w-full items-center justify-center space-x-1.5 rounded-md border border-zinc-200 px-3 py-2 text-sm font-medium text-zinc-600 shadow-sm transition group-hover:text-sky-500 dark:text-zinc-200">
                 <FontAwesomeIcon icon={faInfoCircle} className="h-3 w-3" />
                 <span className="ml-2">Click to learn more</span>
             </p>

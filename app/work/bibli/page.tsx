@@ -3,6 +3,10 @@ import HeaderMarkerTailwind from '@/app/components/HeaderMarkerTailwind'
 import PageSection from '@/app/components/PageSection'
 import TheAlert from '@/app/components/TheAlert'
 import WorkHero from '@/app/components/WorkHero'
+import HeaderMarker from '@/app/components/HeaderMarker'
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowLeft } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 
 const workData = {
     company: 'personal',
@@ -36,8 +40,12 @@ export default function Home() {
             </WorkHero>
 
             <PageSection>
-                <HeaderMarkerInfo />
-                <header className="mx-auto w-full max-w-2xl pb-0">
+                <HeaderMarker
+                    color={HeaderMarker.color.ORANGE}
+                    icon={HeaderMarker.icon.INFO}
+                    size={HeaderMarker.size.SMALL}
+                />
+                <header className="mx-auto w-full max-w-2xl pb-0 pl-4 md:pl-0">
                     <h1 className="flex items-center space-x-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
                         <span>Notes on the design</span>
                     </h1>
@@ -63,14 +71,14 @@ export default function Home() {
             </PageSection>
 
             <PageSection>
-                <div className="mt-5 grid h-[auto] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex space-x-8 overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5">
-                        <div className="flex w-[250px] shrink-0 flex-col items-center justify-center text-center ">
+                <div className="mt-5 grid h-auto grid-cols-3 gap-5">
+                    <div className="col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5 md:flex-row md:space-x-8">
+                        <div className="mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center text-center md:mb-0 ">
                             <h2 className="text-base font-bold text-zinc-800">
                                 All Tailwind
                             </h2>
                             <p className="mt-1.5 text-sm font-light">
-                                Interesting take on list groups
+                                Fun take on list groups
                             </p>
                         </div>
                         <div className="relative grow overflow-hidden rounded-sm shadow-lg">
@@ -82,15 +90,15 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-5 grid h-[440px] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex space-x-8 overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5">
-                        <div className="relative grow overflow-hidden rounded-sm shadow-lg">
+                <div className="mt-5 grid h-auto grid-cols-3 gap-5 md:h-[440px]">
+                    <div className="col-span-3 flex flex-col-reverse overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5 md:flex-row md:space-x-8">
+                        <div className="md:mt-0` relative mt-4 grow overflow-hidden rounded-sm shadow-lg">
                             <img
                                 src={`/work/bibli/bibli__UserProfile.png`}
                                 className="object-cover"
                             />
                         </div>
-                        <div className="flex w-[250px] shrink-0 flex-col items-center justify-center text-center ">
+                        <div className="mx-auto flex w-[250px] shrink-0 flex-col items-center justify-center text-center ">
                             <h2 className="text-base font-bold text-zinc-800">
                                 Visually engaging
                             </h2>
@@ -102,9 +110,9 @@ export default function Home() {
                     </div>
                 </div>
 
-                <div className="mt-5 grid h-[610px] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex flex-col space-y-8 overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5">
-                        <div className="mx-auto flex w-[250px] shrink-0 flex-col items-center justify-center text-center ">
+                <div className="mt-5 grid h-auto grid-cols-3 gap-5 md:h-[610px]">
+                    <div className="col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-5">
+                        <div className="mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center text-center ">
                             <h2 className="text-base font-bold text-zinc-800">
                                 Interesting style blends
                             </h2>
@@ -160,8 +168,12 @@ export default function Home() {
             </PageSection>
 
             <PageSection>
-                <HeaderMarkerTailwind />
-                <header className="mx-auto w-full max-w-2xl pb-0">
+                <HeaderMarker
+                    color={HeaderMarker.color.SKY}
+                    icon={HeaderMarker.icon.TAILWIND}
+                    size={HeaderMarker.size.SMALL}
+                />
+                <header className="mx-auto w-full max-w-2xl pb-0 pl-4 md:pl-0">
                     <h1 className="flex items-center space-x-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
                         <span>Related to Design Engineer role!</span>
                     </h1>
@@ -192,6 +204,19 @@ export default function Home() {
                     </p>
                 </header>
             </PageSection>
+
+            <div className="relative mx-auto w-full max-w-3xl bg-white px-8 pb-6 md:px-16">
+                <a
+                    href="/"
+                    className="inline-flex items-center text-sky-600 hover:text-sky-500 hover:underline"
+                >
+                    <FontAwesomeIcon
+                        icon={faArrowLeft}
+                        className="mr-2 h-3 w-3"
+                    />
+                    <span>Back to main page</span>
+                </a>
+            </div>
         </main>
     )
 }

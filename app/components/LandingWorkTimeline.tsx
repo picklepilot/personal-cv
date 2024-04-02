@@ -73,7 +73,7 @@ const timeline = [
             'Javascript',
             'CSS3',
             'SASS',
-            'Bootstrap (F/E frameworks in general)',
+            'Bootstrap',
         ],
         iconBackground: '#fff',
         howItRelates:
@@ -133,7 +133,7 @@ const timeline = [
 
 export default function LandingWorkTimeline() {
     return (
-        <div className="mt-5 flow-root">
+        <div className="-mx-3 mt-5 flow-root md:mx-0">
             <ul role="list" className="-mb-8">
                 {timeline.map((event, eventIdx) => (
                     <li key={event.id}>
@@ -144,7 +144,7 @@ export default function LandingWorkTimeline() {
                                     aria-hidden="true"
                                 />
                             ) : null}
-                            <div className="relative flex space-x-3">
+                            <div className="relative flex space-x-3 pr-4 md:pr-0">
                                 <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white">
                                     <div
                                         className="relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-zinc-900/5 bg-white shadow-md shadow-zinc-800/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
@@ -169,8 +169,8 @@ export default function LandingWorkTimeline() {
                                         )}
                                     </div>
                                 </div>
-                                <div className="flex min-w-0 flex-1 justify-between space-x-4 pt-3">
-                                    <div>
+                                <div className="mb-3 flex min-w-0 flex-1 flex-wrap-reverse justify-between pt-3 md:flex-row md:space-x-4">
+                                    <div className="mt-1 md:mt-0">
                                         <div className="font-semibold">
                                             {event.role}
                                         </div>

@@ -59,8 +59,6 @@ export default function Home() {
             </PageSection>
 
             <PageSection>
-                <div className="absolute left-[0] top-20 h-[48px] w-[4px] bg-lime-500"></div>
-
                 <PageHeader title="Why am I a great fit?">
                     <p className="mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400">
                         Firstly, I have exclusively been using TailwindCS/UI as
@@ -271,7 +269,7 @@ export default function Home() {
                     </p>
                 </PageHeader>
 
-                <div className="mt-5 flex space-x-6 rounded-xl bg-fuchsia-100 p-5">
+                <div className="mt-5 flex flex-col rounded-xl bg-fuchsia-100 p-5 md:flex-row md:space-x-6">
                     <div className="shrink-0">
                         <img
                             alt=""
@@ -284,7 +282,7 @@ export default function Home() {
                             src={`/work/blob/fpo-logo.png`}
                         />
                     </div>
-                    <div className="grow">
+                    <div className="mt-4 grow md:mt-0">
                         <p className="max-w-xl text-sm text-zinc-600 dark:text-zinc-400">
                             BLOB is an attempt to make team resource/sprint
                             planning a wee bit more fun and interactive.
@@ -295,7 +293,9 @@ export default function Home() {
                             rectify that.{' '}
                             <span className="bg-fuchsia-200 text-fuchsia-700">
                                 Current state was incepted, designed and built
-                                in less than 10 hours—and is wired up to no data
+                                in less than 10 hours, was not built
+                                mobile-first (I wanted to focus on desktop
+                                interaction motion) and is wired up to no data
                                 source, yet.
                             </span>
                         </p>
@@ -351,12 +351,11 @@ export default function Home() {
             </PageSection>
 
             <PageSection>
-                <PageHeader title="Who am I, literally?">
+                <PageHeader title="Me, photographically">
                     <p className="mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400">
-                        These photos are just a tiny bit of representation of
-                        who I am.
+                        Here are a few photos from our travels.
                     </p>
-                    <div className="mt-8 grid grid-cols-4 gap-5">
+                    <div className="mt-8 grid grid-cols-1 gap-5 md:grid-cols-4">
                         <div className="relative col-span-2 h-[350px] overflow-hidden rounded-xl">
                             <img
                                 src="/life/jk_fq_japan.jpg"

@@ -4,6 +4,7 @@ import WorkHero from '@/app/components/WorkHero'
 import PageLogoCloud from '@/app/components/PageLogoCloud'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
+    faArrowLeft,
     faArrowUp,
     faInfoCircle,
 } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
@@ -11,6 +12,9 @@ import HeaderMarkerTailwind from '@/app/components/HeaderMarkerTailwind'
 import HeaderMarkerInfo from '@/app/components/HeaderMarkerInfo'
 import TheAlert from '@/app/components/TheAlert'
 import HeaderMarker from '@/app/components/HeaderMarker'
+import Image from 'next/image'
+import StatGridStat from '@/app/components/StatGridStat'
+import React from 'react'
 
 const workData = {
     company: '3M',
@@ -64,32 +68,26 @@ export default function Home() {
 
             <PageSection>
                 <dl className="grid grid-cols-2 gap-5 text-center">
-                    <div className="rounded-lg bg-zinc-100 px-4 py-5 sm:p-6">
-                        <dt className=" text-sm font-medium text-zinc-500">
-                            Productivity per page
-                        </dt>
+                    <StatGridStat
+                        title={'Productivity per page'}
+                        subTitle={'hours saved'}
+                    >
                         <dd className="mt-1 text-4xl font-semibold tracking-tight text-zinc-900">
                             4.7
                         </dd>
-                        <div className="mt-1 text-xs text-zinc-500/70">
-                            hours saved
-                        </div>
-                    </div>
-                    <div className="rounded-lg bg-zinc-100 px-4 py-5 sm:p-6">
-                        <dt className=" text-sm font-medium text-zinc-500">
-                            Page views
-                        </dt>
+                    </StatGridStat>
+                    <StatGridStat
+                        title={'Page views'}
+                        subTitle={'as of Q1 2024'}
+                    >
                         <dd className="mt-1 flex items-center justify-center space-x-3 text-4xl font-semibold tracking-tight text-zinc-900">
                             <FontAwesomeIcon
                                 icon={faArrowUp}
-                                className="w-4 text-green-500"
+                                className="w-3 text-green-500 md:w-4"
                             />
-                            <span>26.5%</span>
+                            <span className="text-2xl md:text-4xl">26.5%</span>
                         </dd>
-                        <div className="mt-1 text-xs text-zinc-500/70">
-                            as of Q1 2024
-                        </div>
-                    </div>
+                    </StatGridStat>
                 </dl>
 
                 <PageLogoCloud
@@ -119,42 +117,39 @@ export default function Home() {
 
                 <div className="mt-5 grid grid-cols-5 gap-5">
                     <div className="relative col-span-3 h-full overflow-hidden rounded-lg bg-gray-50">
-                        <img
-                            src={`/work/mmm/JK-Github-Contribution-MMM-2.png`}
-                            className="absolute -left-[150px] bottom-0 w-[550px] max-w-[2000px] rounded-lg shadow-xl"
+                        <Image
+                            src="/work/mmm/JK-Github-Contribution-MMM-2.png"
+                            width={550}
+                            height={400}
+                            className="absolute -right-10 bottom-0 w-[550px] max-w-[2000px] rounded-lg shadow-xl md:-left-[150px]"
+                            alt="JK Github screenshot"
                         />
                     </div>
-                    <div className="col-span-2 rounded-xl">
+                    <div className="col-span-2 rounded-2xl">
                         <dl className="grid grid-cols-1 gap-5 text-center">
-                            <div className="rounded-lg bg-zinc-100 px-4 py-5 sm:p-6">
-                                <dt className=" text-sm font-medium text-zinc-500">
-                                    Commits
-                                </dt>
-                                <dd className="mt-1 text-4xl font-semibold tracking-tight text-zinc-900">
+                            <StatGridStat
+                                title={'Commits'}
+                                subTitle={'over 7 years'}
+                            >
+                                <dd className="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
                                     6,568
                                 </dd>
-                                <div className="mt-1 text-xs text-zinc-500/70">
-                                    over 7 years
-                                </div>
-                            </div>
-                            <div className="rounded-lg bg-zinc-100 px-4 py-5 sm:p-6">
-                                <dt className=" text-sm font-medium text-zinc-500">
-                                    Additions
-                                </dt>
-                                <dd className="mt-1 text-4xl font-semibold tracking-tight text-zinc-900">
+                            </StatGridStat>
+                            <StatGridStat
+                                title={'Additions'}
+                                subTitle={'on main repo'}
+                            >
+                                <dd className="mt-1 text-2xl font-semibold tracking-tight text-zinc-900 md:text-4xl">
                                     1.47mil
                                 </dd>
-                                <div className="mt-1 text-xs text-zinc-500/70">
-                                    on Github repo
-                                </div>
-                            </div>
+                            </StatGridStat>
                         </dl>
                     </div>
                 </div>
 
-                <div className="mt-5 grid h-[440px] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex space-x-8 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-5">
-                        <div className="flex w-[250px] shrink-0 flex-col items-center justify-center text-center text-white">
+                <div className="mt-5 grid grid-cols-3 gap-5 md:h-[440px]">
+                    <div className="col-span-3 flex flex-col overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-3 md:flex-row md:space-x-8 md:p-5">
+                        <div className="mx-auto mb-6 flex w-[250px] shrink-0 flex-col items-center justify-center text-center text-white md:mb-0">
                             <h2 className="text-base font-bold">
                                 Activity Feed
                             </h2>
@@ -166,14 +161,14 @@ export default function Home() {
                         <div className="relative grow">
                             <img
                                 src={`/work/mmm/PCM_ActivityLog.png`}
-                                className="absolute right-2 top-2 w-[300px] max-w-[1000px] rounded-lg shadow-2xl"
+                                className="right-2 top-2 w-[300px] max-w-[1000px] rounded-lg shadow-2xl md:absolute"
                             />
                         </div>
                     </div>
                 </div>
 
-                <div className="mt-5 grid h-[390px] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-7">
+                <div className="mt-5 grid grid-cols-3 gap-5 md:h-[390px]">
+                    <div className="col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-3 md:p-7">
                         <div className="mx-auto max-w-sm shrink-0 text-center text-white">
                             <h2 className="text-lg font-bold">
                                 Enterprise Query Builder
@@ -191,8 +186,8 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-                <div className="mt-5 grid h-[390px] grid-cols-3 gap-5">
-                    <div className="col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-7">
+                <div className="mt-5 grid grid-cols-3 gap-5 md:h-[390px]">
+                    <div className="col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-purple-800 via-violet-900 to-purple-800 p-3 md:p-7">
                         <div className="mx-auto max-w-sm shrink-0 text-center text-white">
                             <h2 className="text-base font-bold">Dashboard</h2>
                             <p className="mt-1.5 text-sm font-light text-white">
@@ -214,9 +209,9 @@ export default function Home() {
                 <HeaderMarker
                     color={HeaderMarker.color.ORANGE}
                     icon={HeaderMarker.icon.INFO}
-                    size={HeaderMarker.size.MEDIUM}
+                    size={HeaderMarker.size.SMALL}
                 />
-                <header className="mx-auto w-full max-w-2xl pb-0">
+                <header className="mx-auto w-full max-w-2xl pb-0 pl-4 md:pl-0">
                     <h1 className="flex items-center space-x-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
                         <span>Note on included screenshots</span>
                     </h1>
@@ -236,9 +231,9 @@ export default function Home() {
                 <HeaderMarker
                     color={HeaderMarker.color.SKY}
                     icon={HeaderMarker.icon.TAILWIND}
-                    size={HeaderMarker.size.MEDIUM}
+                    size={HeaderMarker.size.SMALL}
                 />
-                <header className="mx-auto w-full max-w-2xl pb-0">
+                <header className="mx-auto w-full max-w-2xl pb-0 pl-4 md:pl-0">
                     <h1 className="flex items-center space-x-3 text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100">
                         <span>Related to Design Engineer role!</span>
                     </h1>
@@ -275,6 +270,19 @@ export default function Home() {
                     </p>
                 </header>
             </PageSection>
+
+            <div className="relative mx-auto w-full max-w-3xl bg-white px-8 pb-6 md:px-16">
+                <a
+                    href="/"
+                    className="inline-flex items-center text-sky-600 hover:text-sky-500 hover:underline"
+                >
+                    <FontAwesomeIcon
+                        icon={faArrowLeft}
+                        className="mr-2 h-3 w-3"
+                    />
+                    <span>Back to main page</span>
+                </a>
+            </div>
         </main>
     )
 }

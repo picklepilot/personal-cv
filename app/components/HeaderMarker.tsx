@@ -69,7 +69,7 @@ export default function HeaderMarker(props: Props) {
     const { color, icon, size } = props
     return (
         <div
-            className={`absolute left-[0] top-[calc(5rem+5px)] w-[3px] ${BG_COLOR_MAP[color]} ${SIZE_MAP[size]}`}
+            className={`absolute left-[0] top-[calc(3rem)] w-[3px] md:top-[calc(5rem+5px)] ${BG_COLOR_MAP[color]} ${SIZE_MAP[size]}`}
         >
             {ICON_MAP[icon] !== 'Tailwind_CSS_Logo.svg.png' ? (
                 <FontAwesomeIcon
