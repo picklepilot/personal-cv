@@ -30,7 +30,10 @@ export default function PageLogoCloud(props: Props) {
                     className={`-mx-6 grid grid-cols-2 gap-0.5 overflow-hidden sm:mx-0 sm:rounded-2xl ${COL_MAP[cols]}`}
                 >
                     {props.technologies.map((technology: Technology) => (
-                        <div className="bg-zinc-100 p-8 sm:p-10">
+                        <div
+                            key={technology.name}
+                            className="bg-zinc-100 p-8 sm:p-10"
+                        >
                             <img
                                 className="max-h-12 w-full object-contain"
                                 src={technology.src}

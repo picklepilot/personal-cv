@@ -235,7 +235,10 @@ export default function LandingWorkTimeline() {
                                                         (
                                                             technology: string,
                                                         ) => (
-                                                            <span className="mb-2 mr-2 whitespace-nowrap rounded-full bg-lime-600/80 px-2 py-0.5 text-xs font-medium text-lime-50">
+                                                            <span
+                                                                key={technology}
+                                                                className="mb-2 mr-2 whitespace-nowrap rounded-full bg-lime-600/80 px-2 py-0.5 text-xs font-medium text-lime-50"
+                                                            >
                                                                 {technology}
                                                             </span>
                                                         ),
