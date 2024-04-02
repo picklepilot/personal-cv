@@ -1,0 +1,19 @@
+[
+  {
+    "company": "3M",
+    "name": "HAMR",
+    "role": "Design/Client Engineer",
+    "blurb": "Led design and client build of internal PIM from the ground up to handle for the management of 190+ million records.",
+    "dates": "2017-current",
+    "logo": "3M_wordmark.png"
+  },
+  {
+    "company": "Personal",
+    "name": "bibli",
+    "role": "Everything",
+    "blurb": "This is my passion project. During the pandemic, I decided I'd finally start building the 'Letterboxd' of the book world. It's literally how I 'relax' after a long day of work.",
+    "dates": "2013-2015",
+    "logo": "work/bibli/logo-red--padded.png",
+    "url": "/work/bibli"
+  }
+]
