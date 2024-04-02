@@ -24,8 +24,7 @@ export default function Home() {
                         few decades now (36 years old). Born in New York, I now
                         am a Midwesterner living in Minneapolis, Minnesota. (I
                         really hope the one hour time difference from your
-                        posting can be overlooked, at least until you've read
-                        on!)
+                        posting can be forgiven—I certainly can make it work.)
                     </p>
                     <p className="mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400">
                         My history leading to the professional that I am now is
