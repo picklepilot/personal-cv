@@ -17,7 +17,7 @@ const timeline = [
         datetime: '2002-01-01',
         icon: faChild,
         iconBackground: null,
-        // toolkitAdditions: ['HTML', 'CSS', 'Javascript'],
+        toolkitAdditions: [],
         content:
             "Since youth, I've been more concerned with the relative canvas and how all the things fit onto the canvas in a pleasing/meaningful way. I spent my high school years designing mixtape covers and flash websites for local artists, sometimes even getting paid!",
     },
