@@ -21,9 +21,9 @@ export default function Home() {
                 <PageHeader title="My name is Justin Kaczmar.">
                     <p className="mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400">
                         I have been a design-driven full-stack engineer for a
-                        few decades now (36 years old). Born in New York, I now
-                        am a Midwesterner living in Minneapolis, Minnesota. (I
-                        really hope the one hour time difference from your
+                        couple decades now (36 years old). Born in New York, I
+                        now am a Midwesterner living in Minneapolis, Minnesota.
+                        (I really hope the one hour time difference from your
                         posting can be forgiven—I certainly can make it work.)
                     </p>
                     <p className="mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400">
@@ -234,10 +234,6 @@ export default function Home() {
 
                 <ul className="mt-3 max-w-lg list-disc space-y-3 pl-5 text-zinc-600">
                     <li>
-                        Continue on the project listed below to see it working
-                        with real REST api data from JIRA enterprise
-                    </li>
-                    <li>
                         Abstract some of my virtualized scrolling work to a
                         package to a TailwindUI table component
                     </li>
@@ -248,6 +244,10 @@ export default function Home() {
                     <li>
                         Prototype project "Should We Use," using Catalyst
                         components where available!
+                    </li>
+                    <li>
+                        Continue on the project listed below to see it working
+                        with real REST api data from JIRA enterprise
                     </li>
                 </ul>
             </PageSection>

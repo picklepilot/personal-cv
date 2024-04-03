@@ -99,13 +99,14 @@ export default function LandingSectionWhoIAm() {
                                 dashboard layout to happen.)
                                 <br />
                                 <br />
-                                On the personal side, that's pretty much what{' '}
+                                On the personal side, that's pretty much what my
+                                current passion project,{' '}
                                 <a href="/work/bibli" className="link">
                                     bibli
-                                </a>{' '}
-                                is for. It's been an amazing way for me to keep
-                                focused on the latest and greatest with respect
-                                to my toolkit.
+                                </a>
+                                , is for (more on this later). It's been an
+                                amazing way for me to keep focused on the latest
+                                and greatest with respect to my toolkit.
                             </p>
                         </div>
                     </div>
