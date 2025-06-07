@@ -79,9 +79,9 @@ export default function HeaderMarker(props: Props) {
             ) : (
                 <img
                     src={`/Tailwind_CSS_Logo.svg.png`}
-                    alt="Tailwind mark"
+                    alt='Tailwind mark'
                     width={25}
-                    className="relative left-2.5 top-[5px] max-w-sm"
+                    className='relative left-2.5 top-[5px] max-w-sm'
                 />
             )}
         </div>

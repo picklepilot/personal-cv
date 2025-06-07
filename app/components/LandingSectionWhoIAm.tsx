@@ -5,13 +5,13 @@ import TailwindBlockquote from '@/app/components/TailwindBlockquote'
 export default function LandingSectionWhoIAm() {
     return (
         <div>
-            <div className="pt-5">
-                <div className="mt-6 text-zinc-700">
-                    <div className="pb-8">
+            <div className='pt-5'>
+                <div className='mt-6 text-zinc-700'>
+                    <div className='pb-8'>
                         <TailwindBlockquote
                             quote={'You love to design — in code.'}
                         />
-                        <div className="mt-5 space-y-4">
+                        <div className='mt-5 space-y-4'>
                             <p>
                                 This is my Bat Signal. This is how I live my
                                 professional life. Design-in-code is core to my
@@ -38,11 +38,11 @@ export default function LandingSectionWhoIAm() {
                         </div>
                     </div>
 
-                    <div className="pb-8">
+                    <div className='pb-8'>
                         <TailwindBlockquote
                             quote={'You’re fanatical about polish.'}
                         />
-                        <div className="mt-5 space-y-4">
+                        <div className='mt-5 space-y-4'>
                             <p>
                                 Can very much thank MBLM for this one—at least
                                 professionally. I have experience as a "pixel
@@ -65,13 +65,13 @@ export default function LandingSectionWhoIAm() {
                         </div>
                     </div>
 
-                    <div className="pb-8">
+                    <div className='pb-8'>
                         <TailwindBlockquote
                             quote={
                                 'You dive deep. && You live on the bleeding edge. && You love to learn new tools.'
                             }
                         />
-                        <div className="mt-5 space-y-4">
+                        <div className='mt-5 space-y-4'>
                             <p>
                                 These three points exist in tandem for me, both
                                 in my professional and personal
@@ -89,9 +89,9 @@ export default function LandingSectionWhoIAm() {
                                 unachievable by other software being used. (Eg.
                                 forking the{' '}
                                 <a
-                                    href="https://github.com/picklepilot/vue-virtual-scroll-list"
+                                    href='https://github.com/picklepilot/vue-virtual-scroll-list'
                                     target={'_blank'}
-                                    className="link"
+                                    className='link'
                                 >
                                     vue-virtual-scroll-list
                                 </a>{' '}
@@ -101,7 +101,7 @@ export default function LandingSectionWhoIAm() {
                                 <br />
                                 On the personal side, that's pretty much what my
                                 current passion project,{' '}
-                                <a href="/work/bibli" className="link">
+                                <a href='/work/bibli' className='link'>
                                     bibli
                                 </a>
                                 , is for (more on this later). It's been an
@@ -111,14 +111,14 @@ export default function LandingSectionWhoIAm() {
                         </div>
                     </div>
 
-                    <div className="pb-8">
+                    <div className='pb-8'>
                         <TailwindBlockquote
                             quote={
                                 'You are a user and champion of the Tailwind Labs products.'
                             }
                         />
-                        <div className="mt-5 space-y-4">
-                            <p className="">
+                        <div className='mt-5 space-y-4'>
+                            <p className=''>
                                 <strong>Note:</strong> I somewhat put these
                                 words in your mouths, but I just wanted to drive
                                 this point home. 😜

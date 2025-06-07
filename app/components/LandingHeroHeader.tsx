@@ -23,10 +23,10 @@ export default function LandingHeroHeader() {
     })
 
     return (
-        <div className="relative h-[110px] md:h-[100px] lg:h-[120px]">
+        <div className='relative h-[110px] md:h-[100px] lg:h-[120px]'>
             <AnimatePresence>
                 <motion.h1
-                    className="mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:whitespace-nowrap"
+                    className='mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:whitespace-nowrap'
                     key={headers[index].id}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}

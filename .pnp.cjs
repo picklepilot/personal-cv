@@ -47,7 +47,7 @@ const RAW_RUNTIME_STATE =
           ["personal", "workspace:."],\
           ["postcss", "npm:8.5.4"],\
           ["prettier", "npm:3.5.3"],\
-          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.5.14"],\
+          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
           ["tailwindcss", "npm:3.4.17"],\
@@ -4466,7 +4466,7 @@ const RAW_RUNTIME_STATE =
           ["personal", "workspace:."],\
           ["postcss", "npm:8.5.4"],\
           ["prettier", "npm:3.5.3"],\
-          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.5.14"],\
+          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
           ["tailwindcss", "npm:3.4.17"],\
@@ -4687,15 +4687,15 @@ const RAW_RUNTIME_STATE =
       }]\
     ]],\
     ["prettier-plugin-tailwindcss", [\
-      ["npm:0.5.14", {\
-        "packageLocation": "../../.yarn/berry/cache/prettier-plugin-tailwindcss-npm-0.5.14-4c72a3a392-10c0.zip/node_modules/prettier-plugin-tailwindcss/",\
+      ["npm:0.6.12", {\
+        "packageLocation": "./.yarn/unplugged/prettier-plugin-tailwindcss-virtual-c20969ef00/node_modules/prettier-plugin-tailwindcss/",\
         "packageDependencies": [\
-          ["prettier-plugin-tailwindcss", "npm:0.5.14"]\
+          ["prettier-plugin-tailwindcss", "npm:0.6.12"]\
         ],\
         "linkType": "SOFT"\
       }],\
-      ["virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.5.14", {\
-        "packageLocation": "./.yarn/__virtual__/prettier-plugin-tailwindcss-virtual-5dbe5c52dd/3/.yarn/berry/cache/prettier-plugin-tailwindcss-npm-0.5.14-4c72a3a392-10c0.zip/node_modules/prettier-plugin-tailwindcss/",\
+      ["virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12", {\
+        "packageLocation": "./.yarn/unplugged/prettier-plugin-tailwindcss-virtual-c20969ef00/node_modules/prettier-plugin-tailwindcss/",\
         "packageDependencies": [\
           ["@ianvs/prettier-plugin-sort-imports", null],\
           ["@prettier/plugin-pug", null],\
@@ -4708,6 +4708,7 @@ const RAW_RUNTIME_STATE =
           ["@types/prettier-plugin-import-sort", null],\
           ["@types/prettier-plugin-jsdoc", null],\
           ["@types/prettier-plugin-marko", null],\
+          ["@types/prettier-plugin-multiline-arrays", null],\
           ["@types/prettier-plugin-organize-attributes", null],\
           ["@types/prettier-plugin-organize-imports", null],\
           ["@types/prettier-plugin-sort-imports", null],\
@@ -4716,20 +4717,21 @@ const RAW_RUNTIME_STATE =
           ["@types/prettier__plugin-pug", null],\
           ["@types/shopify__prettier-plugin-liquid", null],\
           ["@types/trivago__prettier-plugin-sort-imports", null],\
-          ["@types/zackad__prettier-plugin-twig-melody", null],\
-          ["@zackad/prettier-plugin-twig-melody", null],\
+          ["@types/zackad__prettier-plugin-twig", null],\
+          ["@zackad/prettier-plugin-twig", null],\
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-astro", null],\
           ["prettier-plugin-css-order", null],\
           ["prettier-plugin-import-sort", null],\
           ["prettier-plugin-jsdoc", null],\
           ["prettier-plugin-marko", null],\
+          ["prettier-plugin-multiline-arrays", null],\
           ["prettier-plugin-organize-attributes", null],\
           ["prettier-plugin-organize-imports", null],\
           ["prettier-plugin-sort-imports", null],\
           ["prettier-plugin-style-order", null],\
           ["prettier-plugin-svelte", null],\
-          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.5.14"]\
+          ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12"]\
         ],\
         "packagePeers": [\
           "@ianvs/prettier-plugin-sort-imports",\
@@ -4742,6 +4744,7 @@ const RAW_RUNTIME_STATE =
           "@types/prettier-plugin-import-sort",\
           "@types/prettier-plugin-jsdoc",\
           "@types/prettier-plugin-marko",\
+          "@types/prettier-plugin-multiline-arrays",\
           "@types/prettier-plugin-organize-attributes",\
           "@types/prettier-plugin-organize-imports",\
           "@types/prettier-plugin-sort-imports",\
@@ -4751,13 +4754,14 @@ const RAW_RUNTIME_STATE =
           "@types/prettier__plugin-pug",\
           "@types/shopify__prettier-plugin-liquid",\
           "@types/trivago__prettier-plugin-sort-imports",\
-          "@types/zackad__prettier-plugin-twig-melody",\
-          "@zackad/prettier-plugin-twig-melody",\
+          "@types/zackad__prettier-plugin-twig",\
+          "@zackad/prettier-plugin-twig",\
           "prettier-plugin-astro",\
           "prettier-plugin-css-order",\
           "prettier-plugin-import-sort",\
           "prettier-plugin-jsdoc",\
           "prettier-plugin-marko",\
+          "prettier-plugin-multiline-arrays",\
           "prettier-plugin-organize-attributes",\
           "prettier-plugin-organize-imports",\
           "prettier-plugin-sort-imports",\

@@ -133,21 +133,21 @@ const timeline = [
 
 export default function LandingWorkTimeline() {
     return (
-        <div className="-mx-3 mt-5 flow-root md:mx-0">
-            <ul role="list" className="-mb-8">
+        <div className='-mx-3 mt-5 flow-root md:mx-0'>
+            <ul role='list' className='-mb-8'>
                 {timeline.map((event, eventIdx) => (
                     <li key={event.id}>
-                        <div className="relative pb-8">
+                        <div className='relative pb-8'>
                             {eventIdx !== timeline.length - 1 ? (
                                 <span
-                                    className="absolute left-7 top-4 -ml-px h-full w-0.5 bg-gray-200"
-                                    aria-hidden="true"
+                                    className='absolute left-7 top-4 -ml-px h-full w-0.5 bg-gray-200'
+                                    aria-hidden='true'
                                 />
                             ) : null}
-                            <div className="relative flex space-x-3 pr-4 md:pr-0">
-                                <div className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white">
+                            <div className='relative flex space-x-3 pr-4 md:pr-0'>
+                                <div className='relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-white'>
                                     <div
-                                        className="relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-zinc-900/5 bg-white shadow-md shadow-zinc-800/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0"
+                                        className='relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-zinc-900/5 bg-white shadow-md shadow-zinc-800/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0'
                                         style={{
                                             backgroundColor:
                                                 event.iconBackground ||
@@ -157,39 +157,39 @@ export default function LandingWorkTimeline() {
                                         {event.icon && (
                                             <FontAwesomeIcon
                                                 icon={event.icon}
-                                                className="h-4 w-4"
+                                                className='h-4 w-4'
                                             />
                                         )}
                                         {event.logo && (
                                             <img
-                                                className="w-6"
+                                                className='w-6'
                                                 src={`/${event.logo}`}
-                                                alt=""
+                                                alt=''
                                             />
                                         )}
                                     </div>
                                 </div>
-                                <div className="mb-3 flex min-w-0 flex-1 flex-wrap-reverse justify-between pt-3 md:flex-row md:space-x-4">
-                                    <div className="mt-1 md:mt-0">
-                                        <div className="font-semibold">
+                                <div className='mb-3 flex min-w-0 flex-1 flex-wrap-reverse justify-between pt-3 md:flex-row md:space-x-4'>
+                                    <div className='mt-1 md:mt-0'>
+                                        <div className='font-semibold'>
                                             {event.role}
                                         </div>
-                                        <div className="mt-1 flex items-center space-x-2 text-sm font-medium text-zinc-700">
+                                        <div className='mt-1 flex items-center space-x-2 text-sm font-medium text-zinc-700'>
                                             <span>{event.company}</span>
                                             {event.href !== '#' && (
-                                                <span className="flex items-center space-x-2">
+                                                <span className='flex items-center space-x-2'>
                                                     <span>&middot;</span>
                                                     <a
                                                         href={event.href}
                                                         target={'_blank'}
-                                                        className="ml-1 text-sky-600 hover:text-sky-500"
+                                                        className='ml-1 text-sky-600 hover:text-sky-500'
                                                     >
                                                         {event.href}
                                                     </a>
                                                 </span>
                                             )}
                                         </div>
-                                        <p className="mt-1 max-w-sm text-sm text-zinc-500">
+                                        <p className='mt-1 max-w-sm text-sm text-zinc-500'>
                                             <span
                                                 dangerouslySetInnerHTML={{
                                                     __html: event.content,
@@ -198,8 +198,8 @@ export default function LandingWorkTimeline() {
                                         </p>
 
                                         {event.howItRelates && (
-                                            <div className="mt-4 w-full max-w-sm rounded-lg bg-sky-50 px-5 pb-3 pt-4">
-                                                <h4 className="flex items-center space-x-1.5 text-sm font-bold text-zinc-800 dark:text-zinc-100">
+                                            <div className='mt-4 w-full max-w-sm rounded-lg bg-sky-50 px-5 pb-3 pt-4'>
+                                                <h4 className='flex items-center space-x-1.5 text-sm font-bold text-zinc-800 dark:text-zinc-100'>
                                                     <img
                                                         src={`/Tailwind_CSS_Logo.svg.png`}
                                                         width={18}
@@ -209,7 +209,7 @@ export default function LandingWorkTimeline() {
                                                         Engineer role!
                                                     </span>
                                                 </h4>
-                                                <p className="mt-2 text-sm text-zinc-600">
+                                                <p className='mt-2 text-sm text-zinc-600'>
                                                     <span
                                                         dangerouslySetInnerHTML={{
                                                             __html: event.howItRelates,
@@ -220,34 +220,34 @@ export default function LandingWorkTimeline() {
                                         )}
 
                                         {event.toolkitAdditions?.length > 0 && (
-                                            <div className="mt-4 w-full max-w-sm rounded-lg bg-zinc-100 px-5 pb-3 pt-4 dark:bg-zinc-800">
-                                                <div className="flex items-center space-x-1.5">
+                                            <div className='mt-4 w-full max-w-sm rounded-lg bg-zinc-100 px-5 pb-3 pt-4 dark:bg-zinc-800'>
+                                                <div className='flex items-center space-x-1.5'>
                                                     <FontAwesomeIcon
                                                         icon={faToolbox}
-                                                        className="h-4 w-4"
+                                                        className='h-4 w-4'
                                                     />
-                                                    <span className="text-sm font-semibold">
+                                                    <span className='text-sm font-semibold'>
                                                         Toolkit additions
                                                     </span>
                                                 </div>
-                                                <div className="mt-3 flex flex-wrap items-center">
+                                                <div className='mt-3 flex flex-wrap items-center'>
                                                     {event.toolkitAdditions.map(
                                                         (
-                                                            technology: string,
+                                                            technology: string
                                                         ) => (
                                                             <span
                                                                 key={technology}
-                                                                className="mb-2 mr-2 whitespace-nowrap rounded-full bg-lime-600/80 px-2 py-0.5 text-xs font-medium text-lime-50"
+                                                                className='mb-2 mr-2 whitespace-nowrap rounded-full bg-lime-600/80 px-2 py-0.5 text-xs font-medium text-lime-50'
                                                             >
                                                                 {technology}
                                                             </span>
-                                                        ),
+                                                        )
                                                     )}
                                                 </div>
                                             </div>
                                         )}
                                     </div>
-                                    <div className="whitespace-nowrap text-right text-sm text-zinc-400/60">
+                                    <div className='whitespace-nowrap text-right text-sm text-zinc-400/60'>
                                         <time dateTime={event.datetime}>
                                             {event.date}
                                         </time>

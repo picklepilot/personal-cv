@@ -28,11 +28,11 @@ export default function PageLogoCloud(props: Props) {
     const technologyCount = technologies.length
     return (
         <div className={`bg-white ${props.className}`}>
-            <div className="mx-auto max-w-7xl">
+            <div className='mx-auto max-w-7xl'>
                 <div
                     className={clsx(
                         'mx-0 grid grid-cols-2 gap-0.5 overflow-hidden rounded-2xl sm:mx-0',
-                        COL_MAP[cols],
+                        COL_MAP[cols]
                     )}
                 >
                     {props.technologies.map((technology: Technology) => (
@@ -41,17 +41,17 @@ export default function PageLogoCloud(props: Props) {
                             className={clsx(
                                 technologyCount % 2 && 'last:col-span-2',
                                 'bg-zinc-100 p-8 sm:p-10 md:last:col-span-1',
-                                COL_MAP[cols],
+                                COL_MAP[cols]
                             )}
                         >
                             <img
-                                className="max-h-12 w-full object-contain"
+                                className='max-h-12 w-full object-contain'
                                 src={technology.src}
                                 alt={`Logo Cloud - ${technology.name}`}
                                 width={158}
                                 height={48}
                             />
-                            <div className="mt-5 text-center text-xs text-zinc-400">
+                            <div className='mt-5 text-center text-xs text-zinc-400'>
                                 {technology.name}
                             </div>
                         </div>
