@@ -39,11 +39,11 @@ export default function LandingHero() {
                         <PageHeader title='My name is Justin'>
                             <p className='mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400'>
                                 I have been a design-driven full-stack engineer for a couple decades now. Born in New
-                                York, I now am a Midwesterner living in Minneapolis, Minnesota.
+                                York and now living in Minneapolis, Minnesota.
                             </p>
                             <p className='mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400'>
-                                My history leading to the professional that I am now is long, varied and full of
-                                interesting stories. From designing print mixtape covers while building ActionScript
+                                My journey to becoming the professional I am today spans decades of diverse experiences
+                                and fascinating projects. From crafting mixtape cover art while developing ActionScript
                                 based flash websites for local bands to{' '}
                                 <a href='/work/mmm' className='text-sky-600 hover:text-sky-500 hover:underline'>
                                     bringing a multinational conglomerate's PIM into the modern age of web

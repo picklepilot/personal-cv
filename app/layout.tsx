@@ -1,6 +1,7 @@
-import './globals.css'
-import type { Metadata } from 'next'
 import { Analytics } from '@vercel/analytics/react'
+import type { Metadata } from 'next'
+import { ThemeProvider } from './components/ThemeProvider'
+import './globals.css'
 
 export const metadata: Metadata = {
     title: 'Justin Kaczmar',
@@ -14,8 +15,8 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en'>
-            <body className={`bg-zinc-100`}>
-                {children}
+            <body className={`bg-zinc-100 dark:bg-zinc-900`}>
+                <ThemeProvider defaultTheme='light'>{children}</ThemeProvider>
                 <Analytics />
             </body>
         </html>
