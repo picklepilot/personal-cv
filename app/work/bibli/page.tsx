@@ -5,6 +5,7 @@ import TheAlert from '@/app/components/TheAlert'
 import WorkHero from '@/app/components/WorkHero'
 import HeaderMarker from '@/app/components/HeaderMarker'
 import React from 'react'
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 
@@ -59,12 +60,12 @@ export default function Home() {
                         with a well-designed view that is a departure from the
                         examples and documentation. I'm likely going to start
                         incorporating some fun interaction animations (like in{' '}
-                        <a
+                        <Link
                             href="/work/blob"
                             className="text-sky-600 hover:text-sky-500 hover:underline"
                         >
                             BLOB
-                        </a>
+                        </Link>
                         , the little PoC I threw together for y'all).
                     </p>
                 </header>
@@ -206,7 +207,7 @@ export default function Home() {
             </PageSection>
 
             <div className="relative mx-auto w-full max-w-3xl bg-white px-8 pb-6 md:px-16">
-                <a
+                <Link
                     href="/"
                     className="inline-flex items-center text-sky-600 hover:text-sky-500 hover:underline"
                 >
@@ -215,7 +216,7 @@ export default function Home() {
                         className="mr-2 h-3 w-3"
                     />
                     <span>Back to main page</span>
-                </a>
+                </Link>
             </div>
         </main>
     )

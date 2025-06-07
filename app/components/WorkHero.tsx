@@ -5,6 +5,7 @@ import LandingHeroMeshBackground from '@/app/components/LandingHeroMeshBackgroun
 // import PicklepilotLogo from '@/app/components/PicklepilotLogo'
 import BadgeRound from '@/app/components/BadgeRound'
 import React from 'react'
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 
@@ -25,7 +26,7 @@ export default function WorkHero(props: WorkHeroProps) {
             <div className="mx-auto w-full max-w-3xl px-8 pb-10 pt-5 md:px-16 md:pb-8 lg:flex">
                 <div className="mx-auto flex w-full flex-col space-y-8 lg:mx-0 lg:flex-shrink-0 ">
                     <div className={``}>
-                        <a
+                        <Link
                             href="/"
                             className="inline-flex items-center text-sky-600 hover:text-sky-500 hover:underline"
                         >
@@ -34,7 +35,7 @@ export default function WorkHero(props: WorkHeroProps) {
                                 className="mr-2 h-3 w-3"
                             />
                             <span>Back to main page</span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="space-y-3 text-sm leading-5">

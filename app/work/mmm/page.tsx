@@ -2,6 +2,7 @@ import TopNav from '@/app/components/TopNav'
 import PageSection from '@/app/components/PageSection'
 import WorkHero from '@/app/components/WorkHero'
 import PageLogoCloud from '@/app/components/PageLogoCloud'
+import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
     faArrowLeft,
@@ -272,7 +273,7 @@ export default function Home() {
             </PageSection>
 
             <div className="relative mx-auto w-full max-w-3xl bg-white px-8 pb-6 md:px-16">
-                <a
+                <Link
                     href="/"
                     className="inline-flex items-center text-sky-600 hover:text-sky-500 hover:underline"
                 >
@@ -281,7 +282,7 @@ export default function Home() {
                         className="mr-2 h-3 w-3"
                     />
                     <span>Back to main page</span>
-                </a>
+                </Link>
             </div>
         </main>
     )

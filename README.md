@@ -1,12 +1,15 @@
-# Justin Kaczmar Digital Resume - Prepared for Tailwind Labs
-A quick and informative look into my background, skills, and projects. This project was created as a part of the Tailwind Labs hiring process.
+# Justin Kaczmar Digital Resume - Generic
+
+A quick and informative look into my background, skills, and projects. I will branch this repository to customize the CV when applicable.
 
 ## Tech Stack
+
 - React (Next.js)
 - Tailwind CSS
 - TypeScript
 
 ## TODO
+
 - [ ] Rotate FA code 🤦🏻
 - [ ] Wrap all `<img>` in `<Image>` component
 - [x] Finalize the rotating hero text
