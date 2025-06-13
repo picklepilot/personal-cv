@@ -40,7 +40,7 @@ export default function PhotoGrid() {
                         alt={images[0].alt}
                         fill
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='relative object-cover'
+                        className='relative object-cover transition-all duration-300 hover:scale-105 hover:brightness-110'
                         onClick={() => setIndex(0)}
                     />
                 </div>
@@ -50,7 +50,7 @@ export default function PhotoGrid() {
                         alt={images[1].alt}
                         fill
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='object-cover'
+                        className='object-cover transition-all duration-300 hover:scale-105 hover:brightness-110'
                         onClick={() => setIndex(1)}
                     />
                 </div>
@@ -60,7 +60,7 @@ export default function PhotoGrid() {
                         alt={images[2].alt}
                         fill
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='object-cover'
+                        className='object-cover transition-all duration-300 hover:scale-105 hover:brightness-110'
                         onClick={() => setIndex(2)}
                     />
                 </div>
@@ -70,7 +70,7 @@ export default function PhotoGrid() {
                         alt={images[3].alt}
                         fill
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='object-cover'
+                        className='object-cover transition-all duration-300 hover:scale-105 hover:brightness-110'
                         onClick={() => setIndex(3)}
                     />
                 </div>
@@ -80,7 +80,7 @@ export default function PhotoGrid() {
                         alt={images[4].alt}
                         fill
                         sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
-                        className='object-cover'
+                        className='object-cover transition-all duration-300 hover:scale-105 hover:brightness-110'
                         onClick={() => setIndex(4)}
                     />
                 </div>
