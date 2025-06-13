@@ -22,7 +22,8 @@ export default function ThankYou() {
 
                             <p className='mt-2 max-w-sm text-base text-zinc-500 sm:max-w-md'>
                                 Thanks for taking the time to read through my digital resume. I hope you've enjoyed
-                                getting to know me a bit more. Looking forward to your response!
+                                getting to know me a bit more. Feel free to reach out to me using the contact details
+                                below.
                             </p>
 
                             <div className='group mt-4 flex flex-col space-y-2 pb-20 text-sm opacity-65 hover:opacity-100 sm:flex-row sm:items-center sm:space-y-0 sm:space-x-2'>
