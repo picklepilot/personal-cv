@@ -43,14 +43,17 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.57.1"],\
           ["eslint-config-next", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:15.3.3"],\
           ["framer-motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:11.18.2"],\
+          ["motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:12.17.0"],\
           ["next", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:15.3.3"],\
           ["personal", "workspace:."],\
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
+          ["tailwind-merge", "npm:3.3.0"],\
           ["tailwindcss", "npm:4.1.8"],\
-          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
+          ["yet-another-react-lightbox", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:3.23.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -2735,6 +2738,13 @@ const RAW_RUNTIME_STATE =
         ],\
         "linkType": "SOFT"\
       }],\
+      ["npm:12.17.0", {\
+        "packageLocation": "../../.yarn/berry/cache/framer-motion-npm-12.17.0-239896c79e-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["framer-motion", "npm:12.17.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
       ["virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:11.18.2", {\
         "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-2233b4b58e/3/.yarn/berry/cache/framer-motion-npm-11.18.2-badab02ede-10c0.zip/node_modules/framer-motion/",\
         "packageDependencies": [\
@@ -2745,6 +2755,30 @@ const RAW_RUNTIME_STATE =
           ["framer-motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:11.18.2"],\
           ["motion-dom", "npm:11.18.1"],\
           ["motion-utils", "npm:11.18.1"],\
+          ["react", "npm:19.1.0"],\
+          ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["virtual:a8df9195fe768a065567b5d1667ed4411b3f7c127759e446531473406967a5b77911a888e21aa739628df6e088be35ca9de81b6eec51c548b2deaac6e5e19a6e#npm:12.17.0", {\
+        "packageLocation": "./.yarn/__virtual__/framer-motion-virtual-d21b30cdf2/3/.yarn/berry/cache/framer-motion-npm-12.17.0-239896c79e-10c0.zip/node_modules/framer-motion/",\
+        "packageDependencies": [\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:19.1.6"],\
+          ["@types/react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.6"],\
+          ["framer-motion", "virtual:a8df9195fe768a065567b5d1667ed4411b3f7c127759e446531473406967a5b77911a888e21aa739628df6e088be35ca9de81b6eec51c548b2deaac6e5e19a6e#npm:12.17.0"],\
+          ["motion-dom", "npm:12.17.0"],\
+          ["motion-utils", "npm:12.12.1"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
           ["tslib", "npm:2.8.1"]\
@@ -3746,12 +3780,52 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["motion", [\
+      ["npm:12.17.0", {\
+        "packageLocation": "../../.yarn/berry/cache/motion-npm-12.17.0-7d18f5c9da-10c0.zip/node_modules/motion/",\
+        "packageDependencies": [\
+          ["motion", "npm:12.17.0"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:12.17.0", {\
+        "packageLocation": "./.yarn/__virtual__/motion-virtual-a8df9195fe/3/.yarn/berry/cache/motion-npm-12.17.0-7d18f5c9da-10c0.zip/node_modules/motion/",\
+        "packageDependencies": [\
+          ["@emotion/is-prop-valid", null],\
+          ["@types/emotion__is-prop-valid", null],\
+          ["@types/react", "npm:19.1.6"],\
+          ["@types/react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.6"],\
+          ["framer-motion", "virtual:a8df9195fe768a065567b5d1667ed4411b3f7c127759e446531473406967a5b77911a888e21aa739628df6e088be35ca9de81b6eec51c548b2deaac6e5e19a6e#npm:12.17.0"],\
+          ["motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:12.17.0"],\
+          ["react", "npm:19.1.0"],\
+          ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
+          ["tslib", "npm:2.8.1"]\
+        ],\
+        "packagePeers": [\
+          "@emotion/is-prop-valid",\
+          "@types/emotion__is-prop-valid",\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["motion-dom", [\
       ["npm:11.18.1", {\
         "packageLocation": "../../.yarn/berry/cache/motion-dom-npm-11.18.1-328a240ed0-10c0.zip/node_modules/motion-dom/",\
         "packageDependencies": [\
           ["motion-dom", "npm:11.18.1"],\
           ["motion-utils", "npm:11.18.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:12.17.0", {\
+        "packageLocation": "../../.yarn/berry/cache/motion-dom-npm-12.17.0-570feb6fbc-10c0.zip/node_modules/motion-dom/",\
+        "packageDependencies": [\
+          ["motion-dom", "npm:12.17.0"],\
+          ["motion-utils", "npm:12.12.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -3761,6 +3835,13 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/motion-utils-npm-11.18.1-2341a6fcf2-10c0.zip/node_modules/motion-utils/",\
         "packageDependencies": [\
           ["motion-utils", "npm:11.18.1"]\
+        ],\
+        "linkType": "HARD"\
+      }],\
+      ["npm:12.12.1", {\
+        "packageLocation": "../../.yarn/berry/cache/motion-utils-npm-12.12.1-63d9ae8f87-10c0.zip/node_modules/motion-utils/",\
+        "packageDependencies": [\
+          ["motion-utils", "npm:12.12.1"]\
         ],\
         "linkType": "HARD"\
       }]\
@@ -4074,14 +4155,17 @@ const RAW_RUNTIME_STATE =
           ["eslint", "npm:8.57.1"],\
           ["eslint-config-next", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:15.3.3"],\
           ["framer-motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:11.18.2"],\
+          ["motion", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:12.17.0"],\
           ["next", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:15.3.3"],\
           ["personal", "workspace:."],\
           ["prettier", "npm:3.5.3"],\
           ["prettier-plugin-tailwindcss", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:0.6.12"],\
           ["react", "npm:19.1.0"],\
           ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
+          ["tailwind-merge", "npm:3.3.0"],\
           ["tailwindcss", "npm:4.1.8"],\
-          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"]\
+          ["typescript", "patch:typescript@npm%3A5.8.3#optional!builtin<compat/typescript>::version=5.8.3&hash=5786d5"],\
+          ["yet-another-react-lightbox", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:3.23.2"]\
         ],\
         "linkType": "SOFT"\
       }]\
@@ -4836,6 +4920,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tailwind-merge", [\
+      ["npm:3.3.0", {\
+        "packageLocation": "../../.yarn/berry/cache/tailwind-merge-npm-3.3.0-cb3cdea6cf-10c0.zip/node_modules/tailwind-merge/",\
+        "packageDependencies": [\
+          ["tailwind-merge", "npm:3.3.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["tailwindcss", [\
       ["npm:4.1.8", {\
         "packageLocation": "../../.yarn/berry/cache/tailwindcss-npm-4.1.8-1afed126e3-10c0.zip/node_modules/tailwindcss/",\
@@ -5185,6 +5278,32 @@ const RAW_RUNTIME_STATE =
         "packageLocation": "../../.yarn/berry/cache/yallist-npm-5.0.0-8732dd9f1c-10c0.zip/node_modules/yallist/",\
         "packageDependencies": [\
           ["yallist", "npm:5.0.0"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
+    ["yet-another-react-lightbox", [\
+      ["npm:3.23.2", {\
+        "packageLocation": "../../.yarn/berry/cache/yet-another-react-lightbox-npm-3.23.2-23c8aa607d-10c0.zip/node_modules/yet-another-react-lightbox/",\
+        "packageDependencies": [\
+          ["yet-another-react-lightbox", "npm:3.23.2"]\
+        ],\
+        "linkType": "SOFT"\
+      }],\
+      ["virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:3.23.2", {\
+        "packageLocation": "./.yarn/__virtual__/yet-another-react-lightbox-virtual-de485e4cf3/3/.yarn/berry/cache/yet-another-react-lightbox-npm-3.23.2-23c8aa607d-10c0.zip/node_modules/yet-another-react-lightbox/",\
+        "packageDependencies": [\
+          ["@types/react", "npm:19.1.6"],\
+          ["@types/react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.6"],\
+          ["react", "npm:19.1.0"],\
+          ["react-dom", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:19.1.0"],\
+          ["yet-another-react-lightbox", "virtual:7b77ec3577696f37b3ebb536bc1746e13de69ddec6af2f16db93d05511e7f10dc88adb8aa4ee569bf048884dd4c1ceb1c12261c8ab3b6c1611cd173ec68e6233#npm:3.23.2"]\
+        ],\
+        "packagePeers": [\
+          "@types/react-dom",\
+          "@types/react",\
+          "react-dom",\
+          "react"\
         ],\
         "linkType": "HARD"\
       }]\

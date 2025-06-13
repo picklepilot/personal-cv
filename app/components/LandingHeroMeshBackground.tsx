@@ -3,7 +3,7 @@
 export default function LandingHeroMeshBackground() {
     return (
         <svg
-            className='absolute inset-0 -z-10 h-full w-full stroke-gray-200 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]'
+            className='absolute inset-0 -z-10 h-full w-full [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)] stroke-zinc-200 dark:stroke-zinc-800'
             aria-hidden='true'
         >
             <defs>
@@ -18,12 +18,7 @@ export default function LandingHeroMeshBackground() {
                     <path d='M.5 200V.5H200' fill='none' />
                 </pattern>
             </defs>
-            <rect
-                width='100%'
-                height='100%'
-                strokeWidth={0}
-                fill='url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)'
-            />
+            <rect width='100%' height='100%' strokeWidth={0} fill='url(#0787a7c5-978c-4f66-83c7-11c213f99cb7)' />
         </svg>
     )
 }

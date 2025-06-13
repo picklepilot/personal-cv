@@ -1,1 +1,11 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Framer</title><path d="M4 0h16v8h-8zM4 8h8l8 8H4zM4 16h8v8z"/></svg>
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="256" height="256" rx="60" fill="url(#paint0_linear_1174_62)"/>
+<path d="M85 85V171H128V214H171V171H214V85H85Z" fill="white"/>
+<path d="M85 85H171V128H128V85H85Z" fill="white" fill-opacity="0.6"/>
+<defs>
+<linearGradient id="paint0_linear_1174_62" x1="0" y1="0" x2="256" y2="256" gradientUnits="userSpaceOnUse">
+<stop stop-color="#0099FF"/>
+<stop offset="1" stop-color="#0055FF"/>
+</linearGradient>
+</defs>
+</svg>

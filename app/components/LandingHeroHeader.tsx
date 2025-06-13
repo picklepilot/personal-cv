@@ -1,14 +1,13 @@
 'use client'
 
-import { motion, AnimatePresence } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 const headers = [
-    { id: 1, text: 'Creative problem solver' },
-    { id: 2, text: 'Design engineer' },
-    { id: 3, text: 'Full stack developer' },
-    { id: 4, text: 'UI/UX enthusiast' },
-    { id: 5, text: 'Bridge gapper' },
+    { id: 1, text: 'Design engineer' },
+    { id: 2, text: 'Full stack developer' },
+    { id: 3, text: 'Creative solver' },
+    // { id: 5, text: 'Bridge-gapper' },
 ]
 
 export default function LandingHeroHeader() {
@@ -23,16 +22,16 @@ export default function LandingHeroHeader() {
     })
 
     return (
-        <div className='relative h-[110px] md:h-[100px] lg:h-[120px]'>
+        <div className='relative h-[80px] md:h-[100px] lg:h-full'>
             <AnimatePresence>
                 <motion.h1
-                    className='mt-10 text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl md:whitespace-nowrap'
+                    className='block text-center text-3xl font-bold tracking-tight sm:mt-9 sm:text-3xl sm:text-lime-50 md:whitespace-nowrap dark:text-lime-200'
                     key={headers[index].id}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ ease: 'easeInOut' }}
-                    style={{ position: 'absolute' }}
+                    style={{ position: 'absolute', width: '100%', textAlign: 'center' }}
                 >
                     {headers[index].text}
                 </motion.h1>

@@ -1,11 +1,7 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import {
-    faXmark,
-    faGift,
-    faInfoCircle,
-} from '@awesome.me/kit-e9b483eadd/icons/classic/light'
+import { faGift, faInfoCircle, faXmark } from '@awesome.me/kit-e9b483eadd/icons/classic/light'
 import type { IconName } from '@fortawesome/fontawesome-common-types'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 library.add(faGift, faXmark, faInfoCircle)
 
@@ -48,13 +44,13 @@ const ICON_CLASS_MAP = {
 
 const COLOR_MAP = {
     [Color.ORANGE]: 'text-orange-400',
-    [Color.SKY]: 'text-sky-400',
+    [Color.SKY]: 'text-blue-400',
     [Color.LIME]: 'text-lime-400',
 }
 
 const BG_COLOR_MAP = {
     [Color.ORANGE]: 'bg-orange-400',
-    [Color.SKY]: 'bg-sky-400',
+    [Color.SKY]: 'bg-blue-400',
     [Color.LIME]: 'bg-lime-400',
 }
 
@@ -69,7 +65,7 @@ export default function HeaderMarker(props: Props) {
     const { color, icon, size } = props
     return (
         <div
-            className={`absolute left-[0] top-[calc(3rem)] w-[3px] md:top-[calc(5rem+5px)] ${BG_COLOR_MAP[color]} ${SIZE_MAP[size]}`}
+            className={`absolute top-[calc(3rem)] left-[0] w-[3px] md:top-[calc(5rem+5px)] ${BG_COLOR_MAP[color]} ${SIZE_MAP[size]}`}
         >
             {ICON_MAP[icon] !== 'Tailwind_CSS_Logo.svg.png' ? (
                 <FontAwesomeIcon
@@ -81,7 +77,7 @@ export default function HeaderMarker(props: Props) {
                     src={`/Tailwind_CSS_Logo.svg.png`}
                     alt='Tailwind mark'
                     width={25}
-                    className='relative left-2.5 top-[5px] max-w-sm'
+                    className='relative top-[5px] left-2.5 max-w-sm'
                 />
             )}
         </div>

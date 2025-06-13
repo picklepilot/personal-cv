@@ -1,1 +1,15 @@
-<svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Vue.js</title><path d="M24,1.61H14.06L12,5.16,9.94,1.61H0L12,22.39ZM12,14.08,5.16,2.23H9.59L12,6.41l2.41-4.18h4.43Z"/></svg>
+<svg viewBox="0 0 261.76 226.69" xmlns="http://www.w3.org/2000/svg">
+<g transform="matrix(1.3333 0 0 -1.3333 -76.311 313.34)">
+<g clip-path="url(#a)">
+<g fill-rule="nonzero">
+<path d="m178.62 179.01-38.01-66.88-38 66.88z" fill="#41b883"/>
+<path d="m178.62 179.01-38.01-66.88-38 66.88l-33.12 0 71.12-125.02 71.12 125.02z" fill="#34495e"/>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="a">
+<path d="m57.03 235.01v-180h180v180z"/>
+</clipPath>
+</defs>
+</svg>

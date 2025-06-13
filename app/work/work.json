@@ -3,18 +3,50 @@
         "company": "3M",
         "name": "HAMR",
         "role": "Design/Client Engineer",
-        "blurb": "Led design and client build of internal PIM from the ground up to handle for the management of 190+ million records.",
+        "blurb": "Led design and front-end build of internal PIM from the ground up to handle for the management of 190+ million records.",
         "dates": "2017-current",
         "logo": "3M_wordmark.png",
-        "url": "/work/mmm"
+        "url": "/work/mmm",
+        "backgroundImage": "work/mmm/HAMRv3-Dashboard-1.png",
+        "backgroundImageClasses": "bg-top inset-0 -inset-r-2  bg-left",
+        "color": "opacity-100 bg-gradient-to-r from-indigo-500/10 via-indigo-900/10 to-indigo-800/80"
     },
     {
         "company": "Personal",
         "name": "bibli",
         "role": "Everything",
-        "blurb": "This is my passion project. During the pandemic, I decided I'd finally start building the 'Letterboxd' of the book world. It's literally how I 'relax' after a long day of work.",
+        "blurb": "This is my passion project. During the pandemic, I decided I'd finally start building the 'Letterboxd' of the book world. It's sort of how I 'relax' after a long day of work.",
         "dates": "2013-2015",
         "logo": "work/bibli/logo-red--padded.png",
-        "url": "/work/bibli"
+        "url": "/work/bibli",
+        "backgroundImage": "work/bibli/bibli__Group.png",
+        "backgroundImageClasses": "bg-top inset-0 -inset-x-2",
+        "color": "bg-gradient-to-r from-amber-400/5 via-amber-400/10 to-amber-400/80"
+    },
+    {
+        "company": "Personal",
+        "name": "BLOB",
+        "role": "Everything",
+        "blurb": "This was just a fun way for me to jump head-first back into React development. I primarily specialize in Vuejs, but I wanted to see how I could build a full-stack app with React.",
+        "dates": "2023",
+        "logo": "work/blob/fpo-logo.png",
+        "url": "/work/blob",
+        "backgroundImage": "work/blob/BLOB.png",
+        "backgroundImageClasses": "bg-top inset-0 -inset-x-2",
+        "color": "bg-gradient-to-r from-fuchsia-400/5 via-fuchsia-400/10 to-fuchsia-400/80",
+        "alignBackgroundImage": "top"
+    },
+    {
+        "company": "CompEngine",
+        "name": "CompEngine",
+        "role": "Design Engineer",
+        "blurb": "This was just a fun way for me to jump head-first back into React development. I primarily specialize in Vuejs, but I wanted to see how I could build a full-stack app with React.",
+        "dates": "2023",
+        "logo": "work/compengine/COMPENGINE-logo.png",
+        "url": "/work/compengine",
+        "backgroundImage": "work/compengine/COMPENGINE-competition-detail.png",
+        "backgroundImageClasses": "bg-top inset-0 -inset-x-2.5",
+        "color": "bg-gradient-to-r from-[#00ffff]/5 via-[#00ffff]/10 to-[#00ffff]/80",
+        "alignBackgroundImage": "top"
     }
 ]
