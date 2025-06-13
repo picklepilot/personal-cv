@@ -40,9 +40,7 @@ export default function PageLogoCloud(props: Props) {
             <div className='mx-auto max-w-7xl'>
                 <div
                     className={cn(
-                        'mx-0 grid grid-cols-3 gap-0.5 overflow-hidden rounded-2xl sm:mx-0 md:grid-cols-3',
-                        COL_MAP[cols],
-                        theme?.gridClassName
+                        'mx-0 grid w-full gap-0.5 overflow-hidden rounded-[10px] sm:mx-0 md:grid-cols-[repeat(5,1fr)]'
                     )}
                 >
                     {props.technologies
@@ -52,16 +50,17 @@ export default function PageLogoCloud(props: Props) {
                                 key={TECHNOLOGY_LOGOS_MAP[technologyName].name}
                                 className={cn(
                                     technologyCount % 2 && 'last:col-span-2',
-                                    'bg-zinc-100 p-8 sm:p-10 md:last:col-span-1 dark:bg-zinc-800',
+                                    'flex flex-col items-center justify-center bg-zinc-100 p-8 sm:p-10 md:last:col-span-1 dark:bg-zinc-800',
                                     COL_MAP[cols],
                                     theme?.logoWrapperClassName
                                 )}
                             >
                                 <img
                                     className={cn(
-                                        'max-h-10 w-full object-contain sm:max-h-12',
+                                        'max-h-10 w-full grow object-contain sm:max-h-12',
                                         theme?.imageClassName,
-                                        TECHNOLOGY_LOGOS_MAP[technologyName].invert && 'dark:invert'
+                                        TECHNOLOGY_LOGOS_MAP[technologyName].invert && 'dark:invert',
+                                        TECHNOLOGY_LOGOS_MAP[technologyName].className || ''
                                     )}
                                     src={TECHNOLOGY_LOGOS_MAP[technologyName].src}
                                     alt={`Logo Cloud - ${TECHNOLOGY_LOGOS_MAP[technologyName].name}`}

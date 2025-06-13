@@ -1,6 +1,6 @@
 'use client'
 
-import { faDiploma } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
+import { faGraduationCap } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
@@ -45,12 +45,12 @@ const timeline = [
         href: '#',
         date: '2008 - 2012',
         datetime: '2012-06-01',
-        icon: faDiploma,
+        icon: faGraduationCap,
         toolkitAdditions: [],
         // toolkitAdditions: ['MVC Architecture', 'OOP', 'RESTful APIs', 'Collaboration/Teamwork', 'LAMP Stack', 'Java'],
         iconBackground: null,
         content:
-            'Obtained my BA in Computer Science from SUNY New Paltz. During my time there, the Computing & Math team won a few first places at comps and I built a conference management/networking app during a paid internship. By my last semester I had moved to NYC and was working full time at a branding agency.',
+            '<ul class="list-disc pl-4"><li>Obtained my BA in Computer Science</li><li>President, Math & Computing Science Club</li><li>Provided mentorship and organized programming competitions</li><li>During my last semester I had moved to NYC and was working full time at a branding agency.</li></ul>',
     },
     {
         id: 4,
@@ -62,23 +62,29 @@ const timeline = [
         datetime: '2015-09-30',
         icon: null,
         toolkitAdditions: [
-            // 'Project Management',
-            // 'UX/UI',
-            'Javascript',
+            'Bootstrap',
             'CSS3',
-            'PHP',
-            'MySQL',
             'HTML 5',
+            'Javascript',
+            'MySQL',
+            'PHP',
             'Sass',
             'Swift',
-            'Bootstrap',
             'Wordpress',
+            // 'Project Management',
+            // 'UX/UI',
         ],
         iconBackground: '#fff',
         howItRelates:
             'I created dozens of ad campaign material as part of larger projects, including limited run micro-sites, ad banners and even an iBook. At that point, all animations were done with pure CSS and a bit of JS (gosh, I remember when parallax scrolling would almost guarantee you a win in a pitch). This is the job that completly solidified my opinion and understanding of the importance of design before/during development.',
-        content:
-            'This would be my first professional career job. I was hired (while still in school) and was asked to build an iPhone app MVP to show a client the next week—and it was then that I realized "smarter not harder" would play a pivotal role. (Do you remember Titanium Mobile? This is pre-React Native or Flutter, mind.) <br /><br />Also, my knack for understanding the language of design bode well for me while working at an agency born of some very well respected architects and designers. I became the go-to for prototyping/proving out what current technologies could allow us to do with a front end.',
+        // content:
+        //     'This would be my first professional career job. I was hired (while still in school) and was asked to build an iPhone app MVP to show a client the next week—and it was then that I realized "smarter not harder" would play a pivotal role. (Do you remember Titanium Mobile? This is pre-React Native or Flutter, mind.) <br /><br />Also, my knack for understanding the language of design bode well for me while working at an agency born of some very well respected architects and designers. I became the go-to for prototyping/proving out what current technologies could allow us to do with a front end.',
+        content: `<ul class="list-disc pl-4">
+            <li>First professional career job</li>
+            <li>Led several successful builds for clients including UL, American Airlines, SLS Hotels and Miami Worldcenter</li>
+            <li>Developed one of my most coveted skills—bridging the gap between deigners and developers</li>
+            <li>Go-to for prototyping/proving out what current technologies could allow us to do with a front end</li>
+        </ul>`,
     },
     {
         id: 5,
@@ -90,43 +96,60 @@ const timeline = [
         datetime: '2015-10-01',
         icon: null,
         toolkitAdditions: [
-            'Product Ownership',
-            'Client Relations',
+            'CSS 3',
+            'Figma',
             'Firebase',
+            'HTML 5',
+            'Javascript',
             'Laravel',
+            'MySQL',
+            'PHP',
+            'Sass',
             'Vue',
-            'NoSQL (MongoDB/Firebase)',
+            // 'Client Relations',
+            // 'Product Ownership',
         ],
         iconBackground: '#fff',
         howItRelates:
             'This was my first taste of designing and building a tool from the ground up. During my time here, I used Laravel/Vue/Postgres to create a proprietary brand management tool to help our clients organize and collaborate with us privately.',
-        content:
-            'A former colleague of mine had started a branding agency and asked me to come on board to help build out the digital department. I was tasked with managing the digital projects, the technical digital strategy and execution of all client projects.',
+        content: `<ul class="list-disc pl-4">
+            <li>Brought on as first hire for a boutique branding agency started by a former colleague</li>
+            <li>Managed technical side of projects e2e</li>
+            <li>Oversaw development strategy</li>
+            <li>Created a proprietary brand management tool to help our clients organize and collaborate with us privately</li>
+        </ul>`,
     },
     {
         id: 6,
         logo: '3M_wordmark.png',
-        role: 'Design Engineer',
+        role: 'Designer & Front-end Engineer, HAMR',
         company: '3M',
         href: '#',
         date: '2017 - 2025',
         datetime: '2017-04-01',
         icon: null,
         toolkitAdditions: [
-            'TailwindCSS/UI',
-            'Typescript',
-            'Vue 3',
-            'Vite',
-            'Design in Code',
-            'Team Management',
-            'Pinia',
+            'CSS 3',
+            'Docker',
             'Elasticsearch',
+            'Figma',
+            'Linux',
+            'MySQL',
+            'PHP',
+            'TailwindCSS',
+            'Typescript',
+            'Vite',
+            'Vue',
         ],
         iconBackground: '#fff',
         howItRelates:
             "Working for a large corporation has taught me a lot about the importance of being a self-starter, which I've just naturally always been. There is rarely enough time or bandwidth to get the attention of an audience, so a lot of my work has been design-in-code and rapid prototyping/discovery in order to prove that the next move would be worth it (hint: the answer was usually 'yes' and the next move was already done). Read more about this project by visiting a <a href='/work/mmm' class='text-blue-600 hover:text-blue-500 hover:underline'>mini case study page</a>.",
-        content:
-            'Design engineer for a PIM called HAMR. I incepted, designed and built the client application from the ground up. I am now working to modernize the full client-side tech stack in carefully planned migration. Spend all day knee deep in TailwindCSS, Vue 3, Typescript and Vite.',
+        content: `<ul class="list-disc pl-4">
+            <li>Design engineer for an internal product called HAMR</li>
+            <li>Designed and built the client application from the ground up</li>
+            <li>Most recently completed a full modernization/migration project (Vue 3, Typescript, Vite)</li>
+            <li>🏆 2024 Global Marketing Excellence Award winner</li>
+        </ul>`,
     },
 ]
 
@@ -158,15 +181,18 @@ export default function LandingWorkTimeline() {
                         return (
                             <li key={event.id}>
                                 <div
-                                    className={`relative ${eventIdx === 0 ? 'bg-zinc-100' : 'bg-zinc-100'} rounded-3xl p-4 sm:p-8 dark:bg-zinc-800`}
+                                    className={`relative ${eventIdx === 0 ? 'bg-zinc-100' : 'bg-zinc-100'} rounded-xl p-4 sm:p-8 dark:bg-zinc-800`}
                                 >
                                     <div className='relative flex space-x-3 pr-4 md:pr-0'>
                                         <div
                                             className={`relative flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-zinc-100 dark:bg-zinc-800`}
                                         >
-                                            <div className='relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-zinc-900/8 bg-white shadow-lg shadow-zinc-800/5 dark:border dark:border-zinc-700/40 dark:bg-zinc-800 dark:shadow dark:ring-0 dark:shadow-zinc-900/50'>
+                                            <div className='relative z-10 flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-zinc-900/8 bg-white shadow-lg shadow-zinc-800/5 dark:border dark:border-zinc-700/40 dark:bg-white dark:shadow dark:ring-0 dark:shadow-zinc-900/50'>
                                                 {event.icon && (
-                                                    <FontAwesomeIcon icon={event.icon} className='h-4 w-4' />
+                                                    <FontAwesomeIcon
+                                                        icon={event.icon}
+                                                        className='h-4 w-4 dark:text-zinc-900'
+                                                    />
                                                 )}
                                                 {event.logo && <img className='w-6' src={`/${event.logo}`} alt='' />}
                                             </div>
@@ -194,26 +220,31 @@ export default function LandingWorkTimeline() {
                                                         </span>
                                                     )}
                                                 </div>
-                                                <p className='mt-2 max-w-sm text-base text-zinc-500 sm:max-w-md'>
-                                                    <span
+                                                <div className='mt-2 max-w-sm text-base text-zinc-500 sm:max-w-full md:pr-18'>
+                                                    <div
                                                         dangerouslySetInnerHTML={{
                                                             __html: event.content,
                                                         }}
-                                                    ></span>
-                                                </p>
+                                                    />
+                                                </div>
 
                                                 {/* Toolkit Additions */}
                                                 {event.toolkitAdditions?.length > 0 && (
+                                                    <div className='mt-6 font-semibold text-zinc-900/40'>
+                                                        Primary toolkit:
+                                                    </div>
+                                                )}
+                                                {event.toolkitAdditions?.length > 0 && (
                                                     <motion.div
                                                         ref={toolkitRefs[eventIdx]}
-                                                        className='relative mt-4 w-full rounded-3xl bg-gradient-to-br from-zinc-200/80 via-zinc-300/60 to-zinc-200/80 p-0.5 dark:from-zinc-800 dark:via-zinc-700/60 dark:to-zinc-800'
+                                                        className='relative mt-2 w-full rounded-xl bg-gradient-to-br from-zinc-200/80 via-zinc-300/60 to-zinc-200/80 p-0.5 dark:from-zinc-800 dark:via-zinc-700/60 dark:to-zinc-800'
                                                         style={{
                                                             border: '2px solid transparent',
                                                             backgroundClip: 'padding-box',
                                                         }}
                                                     >
                                                         <motion.div
-                                                            className='absolute inset-0 rounded-2xl'
+                                                            className='absolute inset-0 rounded-xl'
                                                             initial={{
                                                                 background:
                                                                     'linear-gradient(90deg, rgb(132 204 22) 0%, rgb(132 204 22) 0%, transparent 0%)',
@@ -245,14 +276,14 @@ export default function LandingWorkTimeline() {
                                                                 WebkitMaskComposite: 'xor',
                                                             }}
                                                         />
-                                                        <div className='relative z-10 flex flex-wrap items-center rounded-3xl'>
+                                                        <div className='relative z-10 flex w-full flex-wrap items-center rounded-xl'>
                                                             <PageLogoCloud
                                                                 cols={PageLogoCloud.cols.THREE}
-                                                                className={'rounded-2xl'}
+                                                                className={'rounded-xl'}
                                                                 theme={{
                                                                     containerClassName:
-                                                                        'rounded-2xl bg-transparent dark:bg-transparent',
-                                                                    gridClassName: 'md:grid-cols-5',
+                                                                        'rounded-xl bg-transparent dark:bg-transparent md:max-w-full w-full',
+                                                                    gridClassName: 'grid-cols-3',
                                                                     imageClassName: 'max-h-6 sm:max-h-8',
                                                                     logoWrapperClassName: 'p-2 sm:p-4',
                                                                 }}

@@ -39,8 +39,15 @@ export const TECHNOLOGY_LOGOS = [
         name: 'TailwindCSS',
         src: '/technologies/tailwindcss.svg',
         header: 'CSS Frameworks',
+        className: 'w-6 sm:w-9',
     },
-    { name: 'PHP', src: '/technologies/php.svg', header: 'Languages', invert: true },
+    {
+        name: 'PHP',
+        src: '/technologies/php.svg',
+        header: 'Languages',
+        invert: true,
+        className: 'w-6 sm:w-10',
+    },
     { name: 'Laravel', src: '/technologies/laravel.svg', header: 'Frameworks' },
     { name: 'MySQL', src: '/technologies/mysql.svg', header: 'Databases' },
     { name: 'Postgres', src: '/technologies/postgresql.svg', header: 'Databases' },
@@ -62,7 +69,7 @@ export const TECHNOLOGY_LOGOS = [
     { name: 'Bootstrap', src: '/technologies/bootstrap.svg' },
     { name: 'Swift', src: '/technologies/swift.svg' },
     { name: 'Javascript', src: '/technologies/javascript.svg' },
-    { name: 'Sass', src: '/technologies/sass.svg' },
+    { name: 'Sass', src: '/technologies/sass.svg', className: 'w-6 sm:w-9' },
 ]
 
 export const TECHNOLOGY_LOGOS_MAP = TECHNOLOGY_LOGOS.reduce(
