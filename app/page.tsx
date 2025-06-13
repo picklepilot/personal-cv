@@ -8,13 +8,7 @@ import WorkGrid from '@/app/work/WorkGrid'
 import { faCamera, faHandshake, faStar, faTimeline, faUser } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import LandingHero from './components/LandingHero'
 import ThankYou from './components/ThankYou'
-
-interface NavItem {
-    id: string
-    label: string
-    icon: any
-    children?: NavItem[]
-}
+import { NavItem } from './types'
 
 const navItems: NavItem[] = [
     { id: 'hero', label: 'Introduction', icon: faUser },

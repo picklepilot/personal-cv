@@ -130,79 +130,30 @@ const timeline = [
     },
 ]
 
-interface SparkleProps {
-    delay?: number
-    angle?: number
-    distance?: number
-}
-
-const Sparkle = ({ delay = 0, angle = 0, distance = 100 }: SparkleProps) => {
-    const x = Math.cos(angle * (Math.PI / 180)) * distance
-    const y = Math.sin(angle * (Math.PI / 180)) * distance
-
-    return (
-        <motion.div
-            initial={{
-                scale: 0,
-                opacity: 0,
-                x: 0,
-                y: 0,
-            }}
-            animate={{
-                scale: [0, 1, 0.5, 0],
-                opacity: [0, 1, 0.8, 0],
-                x: [0, x * 0.5, x],
-                y: [0, y * 0.5, y],
-            }}
-            transition={{
-                delay,
-                duration: 1,
-                times: [0, 0.2, 0.6, 1],
-                ease: 'easeOut',
-            }}
-            className='absolute h-1 w-1 rounded-full bg-lime-500'
-            style={{
-                boxShadow: '0 0 8px rgba(132, 204, 22, 0.8), 0 0 16px rgba(132, 204, 22, 0.4)',
-                left: '50%',
-                top: '50%',
-            }}
-        />
-    )
-}
-
-const RippleWave = ({ delay = 0 }) => (
-    <motion.div
-        initial={{
-            scale: 1,
-            opacity: 1,
-            borderWidth: '2px',
-        }}
-        animate={{
-            scale: 3,
-            opacity: 0,
-            borderWidth: '1px',
-        }}
-        transition={{
-            delay,
-            duration: 1.6,
-            ease: 'easeInOut',
-        }}
-        className='pointer-events-none absolute inset-0 rounded-3xl border-lime-500'
-        style={{
-            boxShadow: '0 0 12px rgba(132, 204, 22, 0.8), 0 0 24px rgba(132, 204, 22, 0.4)',
-        }}
-    />
-)
-
 export default function LandingWorkTimeline() {
+    const toolkitRef0 = useRef(null)
+    const toolkitRef1 = useRef(null)
+    const toolkitRef2 = useRef(null)
+    const toolkitRef3 = useRef(null)
+    const toolkitRef4 = useRef(null)
+
+    const toolkitRefs = [toolkitRef0, toolkitRef1, toolkitRef2, toolkitRef3, toolkitRef4]
+
+    const isInView0 = useInView(toolkitRef0, { once: true, margin: '-100px' })
+    const isInView1 = useInView(toolkitRef1, { once: true, margin: '-100px' })
+    const isInView2 = useInView(toolkitRef2, { once: true, margin: '-100px' })
+    const isInView3 = useInView(toolkitRef3, { once: true, margin: '-100px' })
+    const isInView4 = useInView(toolkitRef4, { once: true, margin: '-100px' })
+
+    const isInView = [isInView0, isInView1, isInView2, isInView3, isInView4]
+
     return (
         <div className='relative mx-auto w-full max-w-3xl'>
             <ul role='list' className='relative space-y-8'>
                 {timeline
                     .sort((a, b) => a.id - b.id)
                     .map((event, eventIdx) => {
-                        const toolkitRef = useRef(null)
-                        const isInView = useInView(toolkitRef, { once: true, margin: '-100px' })
+                        // const isInView = useInView(toolkitRefs[eventIdx], { once: true, margin: '-100px' })
 
                         return (
                             <li key={event.id}>
@@ -254,7 +205,7 @@ export default function LandingWorkTimeline() {
                                                 {/* Toolkit Additions */}
                                                 {event.toolkitAdditions?.length > 0 && (
                                                     <motion.div
-                                                        ref={toolkitRef}
+                                                        ref={toolkitRefs[eventIdx]}
                                                         className='relative mt-4 w-full rounded-3xl bg-gradient-to-br from-zinc-200/80 via-zinc-300/60 to-zinc-200/80 p-0.5 dark:from-zinc-800 dark:via-zinc-700/60 dark:to-zinc-800'
                                                         style={{
                                                             border: '2px solid transparent',
@@ -269,7 +220,7 @@ export default function LandingWorkTimeline() {
                                                                 opacity: 0,
                                                             }}
                                                             animate={
-                                                                isInView
+                                                                isInView[eventIdx]
                                                                     ? {
                                                                           background:
                                                                               'linear-gradient(90deg, rgb(132 204 22) 0%, rgb(132 204 22) 100%, transparent 100%)',

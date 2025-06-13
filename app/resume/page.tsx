@@ -5,21 +5,40 @@ import {
     faAt,
     faBriefcase,
     faCalendarAlt,
+    faCamera,
     faCode,
     faGlobe,
     faGraduationCap,
+    faHandshake,
     faMapMarkerAlt,
     faPhone,
+    faStar,
+    faTimeline,
     faTools,
+    faUser,
 } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
+import { NavItem } from '../types'
+
+const navItems: NavItem[] = [
+    { id: 'hero', label: 'Introduction', icon: faUser },
+    { id: 'background', label: 'Background', icon: faTimeline },
+    // { id: 'toolkit', label: 'Toolkit', icon: faToolbox },
+    {
+        id: 'case-studies',
+        label: 'Case Studies',
+        icon: faStar,
+    },
+    { id: 'reality', label: 'Reality', icon: faCamera },
+    { id: 'thank-you', label: 'Thank You!', icon: faHandshake },
+]
 
 export default function Resume() {
     return (
         <main className='flex min-h-screen flex-col items-center justify-between py-2 dark:bg-zinc-900 dark:text-white'>
             {/* Vertical Navigation */}
-            <VerticalNav />
+            <VerticalNav navItems={navItems} />
 
             {/* Theme Toggle */}
             <div className='fixed top-4 right-4 z-50'>

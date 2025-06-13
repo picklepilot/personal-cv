@@ -6,6 +6,7 @@ import StatGridStat from '@/app/components/StatGridStat'
 import { ThemeToggle } from '@/app/components/ThemeToggle'
 import VerticalNav from '@/app/components/VerticalNav'
 import WorkHero from '@/app/components/WorkHero'
+import { NavItem } from '@/app/types'
 import {
     faArrowLeft,
     faArrowUp,
