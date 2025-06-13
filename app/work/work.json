@@ -12,6 +12,21 @@
         "color": "opacity-100 bg-gradient-to-r from-indigo-500/10 via-indigo-900/10 to-indigo-800/80"
     },
     {
+        "company": "CompEngine",
+        "name": "CompEngine",
+        "role": "Design Engineer",
+        "blurb": "This was just a fun way for me to jump head-first back into React development. I primarily specialize in Vuejs, but I wanted to see how I could build a full-stack app with React.",
+        "dates": "2023",
+        "logo": "work/compengine/COMPENGINE-logo.png",
+        "url": "/work/compengine",
+        "logoClasses": "w-4",
+        "backgroundImage": "work/compengine/COMPENGINE-competition-detail.png",
+        "backgroundImageClasses": "bg-top inset-0 -inset-x-2.5",
+        "color": "bg-gradient-to-r from-[#00ffff]/5 via-[#00ffff]/10 to-[#00ffff]/80",
+        "alignBackgroundImage": "top",
+        "contentClasses": "sm:text-white text-zinc-900 dark:text-zinc-100"
+    },
+    {
         "company": "Personal",
         "name": "bibli",
         "role": "Everything",
@@ -34,19 +49,6 @@
         "backgroundImage": "work/blob/BLOB.png",
         "backgroundImageClasses": "bg-top inset-0 -inset-x-2",
         "color": "bg-gradient-to-r from-fuchsia-400/5 via-fuchsia-400/10 to-fuchsia-400/80",
-        "alignBackgroundImage": "top"
-    },
-    {
-        "company": "CompEngine",
-        "name": "CompEngine",
-        "role": "Design Engineer",
-        "blurb": "This was just a fun way for me to jump head-first back into React development. I primarily specialize in Vuejs, but I wanted to see how I could build a full-stack app with React.",
-        "dates": "2023",
-        "logo": "work/compengine/COMPENGINE-logo.png",
-        "url": "/work/compengine",
-        "backgroundImage": "work/compengine/COMPENGINE-competition-detail.png",
-        "backgroundImageClasses": "bg-top inset-0 -inset-x-2.5",
-        "color": "bg-gradient-to-r from-[#00ffff]/5 via-[#00ffff]/10 to-[#00ffff]/80",
         "alignBackgroundImage": "top"
     }
 ]
