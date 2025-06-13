@@ -120,7 +120,7 @@ export default function Home() {
                         PCM is a product data management tool that allows users to manage global product data. After a
                         complete rearchitecture of the ETL pipeline, HAMR had an API that enabled the managememnt
                         lifecycle of product data updates to be minutes instead of days. backend that was capable of
-                        handling 190+ million records across 87 locales.
+                        handling 66+ million records across 87 locales.
                     </p>
                 </PageHeader>
 
