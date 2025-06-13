@@ -2,6 +2,7 @@
 
 import LandingHeroMeshBackground from '@/app/components/LandingHeroMeshBackground'
 import JKPictureWithAnimations from './JKPictureWithAnimations'
+import LandingHeroHeader from './LandingHeroHeader'
 
 export default function LandingHero() {
     return (
@@ -41,13 +42,14 @@ export default function LandingHero() {
                                 <JKPictureWithAnimations />
 
                                 <div className='absolute inset-px z-20 flex rounded-4xl bg-gradient-to-t from-amber-900/0 via-amber-900/20 to-amber-900/40 p-6 transition-all duration-700 sm:bg-gradient-to-r dark:from-black/0 dark:via-black/20 dark:to-black/40'>
-                                    <div className='pointer-events-auto flex w-full transform flex-col justify-between p-6 text-right text-lime-400 transition-all duration-500 hover:translate-y-[-4px] sm:p-4 sm:px-6 sm:py-8 dark:text-lime-400'>
-                                        <h3 className='grow text-left text-[70px]/18 font-bold transition-all duration-300 sm:text-right sm:text-[130px]/24'>
+                                    <div className='pointer-events-auto flex w-full transform flex-col p-6 text-right text-lime-400 transition-all duration-500 hover:translate-y-[-4px] sm:justify-between sm:p-4 sm:px-6 sm:py-8 dark:text-lime-400'>
+                                        <h3 className='text-center text-[70px]/18 font-bold transition-all duration-300 sm:grow sm:text-right sm:text-[130px]/24'>
                                             Justin <br /> Kaczmar
                                         </h3>
-                                        <p className='mt-1 text-sm opacity-90 transition-all duration-300 hover:opacity-100 sm:mt-2 sm:text-base'>
+                                        <LandingHeroHeader />
+                                        {/* <p className='mt-5 text-center text-lg text-zinc-900/20 opacity-90 transition-all duration-300 hover:opacity-100 sm:mt-2 sm:text-right sm:text-base'>
                                             Design Engineer
-                                        </p>
+                                        </p> */}
                                     </div>
                                 </div>
 
