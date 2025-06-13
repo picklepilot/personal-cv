@@ -1,10 +1,11 @@
 [
     {
+        "enabled": true,
         "company": "3M",
         "name": "HAMR",
         "role": "Design/Client Engineer",
-        "blurb": "Led design and front-end build of internal PIM from the ground up to handle for the management of 190+ million records.",
-        "dates": "2017-current",
+        "blurb": "Led design and front-end build of internal PIM from the ground up to handle for the management of 66+ million records across 87 locales.",
+        "dates": "2017-2025",
         "logo": "3M_wordmark.png",
         "url": "/work/mmm",
         "backgroundImage": "work/mmm/HAMRv3-Dashboard-1.png",
@@ -12,6 +13,7 @@
         "color": "opacity-100 bg-gradient-to-r from-indigo-500/10 via-indigo-900/10 to-indigo-800/80"
     },
     {
+        "enabled": false,
         "company": "CompEngine",
         "name": "CompEngine",
         "role": "Design Engineer",
@@ -27,6 +29,7 @@
         "contentClasses": "sm:text-white text-zinc-900 dark:text-zinc-100"
     },
     {
+        "enabled": false,
         "company": "Personal",
         "name": "bibli",
         "role": "Everything",
@@ -39,6 +42,7 @@
         "color": "bg-gradient-to-r from-amber-400/5 via-amber-400/10 to-amber-400/80"
     },
     {
+        "enabled": false,
         "company": "Personal",
         "name": "BLOB",
         "role": "Everything",

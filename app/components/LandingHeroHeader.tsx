@@ -8,7 +8,7 @@ const headers = [
     { id: 2, text: 'Full stack developer' },
     { id: 3, text: 'Creative problem solver' },
     { id: 4, text: 'Bridge-gapper' },
-    { id: 5, text: 'Forever learner' },
+    { id: 5, text: 'Lifelong learner' },
     // { id: 5, text: 'Bridge-gapper' },
 ]
 

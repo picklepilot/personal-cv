@@ -1,9 +1,12 @@
 'use client'
 
-import work from '@/app/work/work.json'
 import WorkGridItem from '@/app/work/WorkGridItem'
 
-export default function WorkGrid() {
+interface WorkGridProps {
+    work: any[]
+}
+
+export default function WorkGrid({ work }: WorkGridProps) {
     return (
         <div className=''>
             <ul role='list' className='grid grid-cols-1'>

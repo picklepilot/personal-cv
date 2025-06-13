@@ -3,6 +3,7 @@ import LandingWorkTimeline from '@/app/components/LandingWorkTimeline'
 import PageHeader from '@/app/components/PageHeader'
 import PhotoGrid from '@/app/components/PhotoGrid'
 import VerticalNav from '@/app/components/VerticalNav'
+import work from '@/app/work/work.json'
 import WorkGrid from '@/app/work/WorkGrid'
 import { faCamera, faHandshake, faStar, faTimeline, faUser } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import LandingHero from './components/LandingHero'
@@ -26,6 +27,9 @@ const sectionHeaderTheme = {
     container: 'px-4 sm:px-6 py-10 max-w-3xl',
     header: 'text-3xl sm:text-5xl',
 }
+
+const personalProjects = work.filter(project => project.company === 'Personal')
+const workProjects = work.filter(project => project.company !== 'Personal')
 
 export default function Home() {
     return (
@@ -72,7 +76,13 @@ export default function Home() {
                             go-to toolkit and abilities as a designer/developer in what they are today.
                         </p>
                     </PageHeader>
-                    <WorkGrid />
+                    <WorkGrid work={workProjects} />
+                    <PageHeader id='personal-projects' title='For fun' theme={sectionHeaderTheme}>
+                        <p className='lead'>
+                            When I'm not working my day job, I'm usually working on one of the following pet projects.
+                        </p>
+                    </PageHeader>
+                    <WorkGrid work={personalProjects} />
                     <PageHeader id='reality' title='Reality' theme={sectionHeaderTheme}>
                         <p className='lead'>
                             Get to know me (and my family) a bit more though the various photos below.

@@ -50,7 +50,7 @@ const timeline = [
         // toolkitAdditions: ['MVC Architecture', 'OOP', 'RESTful APIs', 'Collaboration/Teamwork', 'LAMP Stack', 'Java'],
         iconBackground: null,
         content:
-            '<ul class="list-disc pl-4"><li>Obtained my BA in Computer Science</li><li>President, Math & Computing Science Club</li><li>Provided mentorship and organized programming competitions</li><li>During my last semester I had moved to NYC and was working full time at a branding agency.</li></ul>',
+            '<ul class="list-disc pl-4"><li>Obtained my BA in Computer Science</li><li>President, Math & Computing Science Club</li><li>Provided mentorship and organized programming competitions</li></ul>',
     },
     {
         id: 4,
