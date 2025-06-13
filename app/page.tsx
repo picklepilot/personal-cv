@@ -2,7 +2,6 @@ import ContinuousTimeline from '@/app/components/ContinuousTimeline'
 import LandingWorkTimeline from '@/app/components/LandingWorkTimeline'
 import PageHeader from '@/app/components/PageHeader'
 import PhotoGrid from '@/app/components/PhotoGrid'
-import { ThemeToggle } from '@/app/components/ThemeToggle'
 import VerticalNav from '@/app/components/VerticalNav'
 import WorkGrid from '@/app/work/WorkGrid'
 import { faCamera, faHandshake, faStar, faTimeline, faUser } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
@@ -35,11 +34,6 @@ export default function Home() {
 
             {/* Vertical Navigation */}
             <VerticalNav navItems={navItems} />
-
-            {/* Theme Toggle */}
-            <div className='fixed right-4 bottom-4 z-50 sm:top-4 sm:right-4'>
-                <ThemeToggle />
-            </div>
 
             {/* Resume Link */}
             {/* <div className='fixed top-20 right-4 z-50'>

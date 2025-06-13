@@ -3,7 +3,6 @@ import PageHeader from '@/app/components/PageHeader'
 import PageLogoCloud from '@/app/components/PageLogoCloud'
 import PageSection from '@/app/components/PageSection'
 import StatGridStat from '@/app/components/StatGridStat'
-import { ThemeToggle } from '@/app/components/ThemeToggle'
 import VerticalNav from '@/app/components/VerticalNav'
 import WorkHero from '@/app/components/WorkHero'
 import { NavItem } from '@/app/types'
@@ -41,9 +40,9 @@ export default function Home() {
     return (
         <main className='flex min-h-screen flex-col items-center justify-between'>
             {/* Theme Toggle */}
-            <div className='fixed top-4 right-4 z-50'>
+            {/* <div className='fixed top-4 right-4 z-50'>
                 <ThemeToggle />
-            </div>
+            </div> */}
 
             {/* Vertical Navigation */}
             <VerticalNav navItems={navItems} />
@@ -62,12 +61,6 @@ export default function Home() {
                     contributed to a technology that makes someone's life easier and can see that happening in real
                     time.
                 </p>
-                {/* <p className='mt-4 text-base leading-7 text-zinc-600 md:mt-6 md:text-xl md:leading-8 dark:text-white'>
-                    Due to what would be a whole conversation on its own, design consideration generally would come as
-                    an afterthought in the enterprise (at least the one I'm used to), so I've been very proud to see how
-                    this particular tool has improved both productivity and growth while being prettier than most of the
-                    other "buy not build" products in our suite.
-                </p> */}
             </WorkHero>
 
             <PageSection id='accomplishments' className='max-w-4xl bg-transparent px-4'>

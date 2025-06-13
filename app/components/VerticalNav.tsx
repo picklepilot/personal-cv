@@ -2,13 +2,9 @@
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useState } from 'react'
-
-interface NavItem {
-    id: string
-    label: string
-    icon: any
-    children?: NavItem[]
-}
+import { NavItem } from '../types'
+import { BackToTopButton } from './BackToTop'
+import { ThemeToggle } from './ThemeToggle'
 
 interface VerticalNavProps {
     navItems: NavItem[]
@@ -16,6 +12,9 @@ interface VerticalNavProps {
 
 export default function VerticalNav({ navItems }: VerticalNavProps) {
     const [activeSection, setActiveSection] = useState('')
+    const [isMobileNavVisible, setIsMobileNavVisible] = useState(true)
+    const [lastScrollY, setLastScrollY] = useState(0)
+    const [isAtBottom, setIsAtBottom] = useState(false)
 
     // Flatten nav items to include children for intersection observer
     const getAllNavItems = (items: NavItem[]): NavItem[] => {
@@ -54,6 +53,38 @@ export default function VerticalNav({ navItems }: VerticalNavProps) {
 
         return () => observer.disconnect()
     }, [navItems])
+
+    // Handle scroll direction detection and bottom detection
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollY = window.scrollY
+            const windowHeight = window.innerHeight
+            const documentHeight = document.documentElement.scrollHeight
+
+            // Check if we're at the bottom of the page
+            const isBottom = Math.ceil(currentScrollY + windowHeight) >= documentHeight - 100
+            setIsAtBottom(isBottom)
+
+            // Show nav when at the top of the page
+            if (currentScrollY <= 0) {
+                setIsMobileNavVisible(true)
+                setLastScrollY(currentScrollY)
+                return
+            }
+
+            // Show nav when scrolling up, hide when scrolling down
+            if (currentScrollY < lastScrollY) {
+                setIsMobileNavVisible(true)
+            } else {
+                setIsMobileNavVisible(false)
+            }
+
+            setLastScrollY(currentScrollY)
+        }
+
+        window.addEventListener('scroll', handleScroll, { passive: true })
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [lastScrollY])
 
     const scrollToSection = (sectionId: string) => {
         const element = document.getElementById(sectionId)
@@ -119,12 +150,27 @@ export default function VerticalNav({ navItems }: VerticalNavProps) {
                 <div className='flex flex-col space-y-1 rounded-2xl border border-zinc-200/50 bg-white/80 p-3 shadow-lg backdrop-blur-sm dark:border-zinc-700/50 dark:bg-zinc-800/80'>
                     {topLevelItems.map(item => renderNavItem(item, 0, false))}
                 </div>
+                <div className='mt-4 flex justify-center'>
+                    <ThemeToggle />
+                </div>
             </nav>
 
             {/* Mobile Navigation - Horizontal Bottom */}
-            <nav className='fixed bottom-6 left-1/2 z-40 -translate-x-1/2 xl:hidden'>
+            <nav
+                className={`fixed bottom-6 left-1/2 z-40 flex -translate-x-1/2 transition-transform duration-300 xl:hidden ${
+                    isMobileNavVisible ? 'translate-y-0' : 'translate-y-32'
+                }`}
+            >
+                {isAtBottom && (
+                    <div className='mr-4 flex items-center'>
+                        <BackToTopButton />
+                    </div>
+                )}
                 <div className='flex space-x-2 rounded-2xl border border-zinc-200/50 bg-white/90 p-3 shadow-lg backdrop-blur-sm dark:border-zinc-700/50 dark:bg-zinc-800/90'>
                     {getAllNavItems(topLevelItems).map(item => renderNavItem(item, 0, true))}
+                </div>
+                <div className='ml-4 flex items-center'>
+                    <ThemeToggle />
                 </div>
             </nav>
         </>
