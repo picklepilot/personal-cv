@@ -247,25 +247,26 @@ export default function LandingWorkTimeline() {
                                                             className='absolute inset-0 rounded-xl'
                                                             initial={{
                                                                 background:
-                                                                    'linear-gradient(90deg, rgb(132 204 22) 0%, rgb(132 204 22) 0%, transparent 0%)',
+                                                                    'linear-gradient(180deg, rgb(132 204 22) 0%, rgb(132 204 22) 0%, transparent 0%)',
                                                                 opacity: 0,
                                                             }}
                                                             animate={
                                                                 isInView[eventIdx]
                                                                     ? {
                                                                           background:
-                                                                              'linear-gradient(90deg, rgb(132 204 22) 0%, rgb(132 204 22) 100%, transparent 100%)',
+                                                                              'linear-gradient(180deg, rgb(132 204 22) 0%, rgb(132 204 22) 100%, transparent 100%)',
                                                                           opacity: 1,
                                                                       }
                                                                     : {
                                                                           background:
-                                                                              'linear-gradient(90deg, rgb(132 204 22) 0%, rgb(132 204 22) 0%, transparent 0%)',
+                                                                              'linear-gradient(180deg, rgb(132 204 22) 0%, rgb(132 204 22) 0%, transparent 0%)',
                                                                           opacity: 0,
                                                                       }
                                                             }
                                                             transition={{
                                                                 duration: 1,
                                                                 ease: 'easeInOut',
+                                                                delay: 0.3,
                                                             }}
                                                             style={{
                                                                 maskImage:
