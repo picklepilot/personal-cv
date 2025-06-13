@@ -40,7 +40,7 @@ export default function PageLogoCloud(props: Props) {
             <div className='mx-auto max-w-7xl'>
                 <div
                     className={cn(
-                        'mx-0 grid w-full gap-0.5 overflow-hidden rounded-[10px] sm:mx-0 md:grid-cols-[repeat(5,1fr)]'
+                        'mx-0 grid w-full grid-cols-[repeat(3,1fr)] gap-0.5 overflow-hidden rounded-[10px] sm:mx-0 md:grid-cols-[repeat(5,1fr)]'
                     )}
                 >
                     {props.technologies

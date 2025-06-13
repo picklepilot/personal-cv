@@ -285,7 +285,7 @@ export default function LandingWorkTimeline() {
                                                                         'rounded-xl bg-transparent dark:bg-transparent md:max-w-full w-full',
                                                                     gridClassName: 'grid-cols-3',
                                                                     imageClassName: 'max-h-6 sm:max-h-8',
-                                                                    logoWrapperClassName: 'p-2 sm:p-4',
+                                                                    logoWrapperClassName: 'px-2 py-4 sm:p-4',
                                                                 }}
                                                                 technologies={event.toolkitAdditions as any}
                                                             />
