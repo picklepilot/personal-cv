@@ -147,7 +147,7 @@ export default function VerticalNav({ navItems }: VerticalNavProps) {
         <>
             {/* Desktop Navigation - Vertical Left Side */}
             <nav className='fixed top-1/2 left-6 z-40 hidden -translate-y-1/2 xl:block'>
-                <div className='flex flex-col space-y-1 rounded-2xl border border-zinc-200/50 bg-white/80 p-3 shadow-lg backdrop-blur-sm dark:border-zinc-700/50 dark:bg-zinc-800/80'>
+                <div className='flex flex-col space-y-1 rounded-2xl border border-zinc-200/50 bg-white/80 p-3 shadow-lg ring-1 ring-zinc-900/5 backdrop-blur-sm dark:border-zinc-700/50 dark:bg-zinc-800/80'>
                     {topLevelItems.map(item => renderNavItem(item, 0, false))}
                 </div>
                 <div className='mt-4 flex justify-center'>
