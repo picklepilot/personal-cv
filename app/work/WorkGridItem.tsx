@@ -46,7 +46,7 @@ export default function WorkGridItem(props: any) {
                     {/* Dates in upper right corner */}
                     {project.dates && (
                         <div className='z-20 rounded-full border border-white/20 bg-white/10 px-3 py-1 backdrop-blur-sm sm:absolute sm:top-4 sm:right-4 dark:border-white/10 dark:bg-black/20'>
-                            <p className='text-xs font-medium text-zinc-500 dark:text-zinc-100'>{project.dates}</p>
+                            <p className={`text-xs font-medium ${project.contentClasses}`}>{project.dates}</p>
                         </div>
                     )}
                 </div>
@@ -71,7 +71,9 @@ export default function WorkGridItem(props: any) {
                                 />
                             </a>
                         )}
-                        {!project.enabled && <span className='text-zinc-900/40'>Details coming soon</span>}
+                        {!project.enabled && (
+                            <span className={`opacity-60 ${project.contentClasses}`}>Details coming soon</span>
+                        )}
                     </div>
                 </div>
             </div>
