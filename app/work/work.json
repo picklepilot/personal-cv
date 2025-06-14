@@ -8,8 +8,8 @@
         "dates": "2017-2025",
         "logo": "3M_wordmark.png",
         "url": "/work/mmm",
-        "backgroundImage": "work/mmm/HAMRv3-Dashboard-1.png",
-        "backgroundImageClasses": "bg-top inset-0 -inset-r-2  bg-left",
+        "backgroundImage": "work/mmm/HAMR-Dashboard-1.webp",
+        "backgroundImageClasses": "bg-top inset-0 -inset-r-2 bg-left bg-fit",
         "color": "opacity-100 bg-gradient-to-r from-indigo-500/10 via-indigo-900/10 to-indigo-800/80"
     },
     {
@@ -17,7 +17,7 @@
         "company": "CompEngine",
         "name": "CompEngine",
         "role": "Design Engineer",
-        "blurb": "This was just a fun way for me to jump head-first back into React development. I primarily specialize in Vuejs, but I wanted to see how I could build a full-stack app with React.",
+        "blurb": "I was asked to help design and build the initial desktop/mobile web version of this app to bring to market as soon as possible.",
         "dates": "2023",
         "logo": "work/compengine/COMPENGINE-logo.png",
         "url": "/work/compengine",

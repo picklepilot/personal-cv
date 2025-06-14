@@ -1,42 +1,85 @@
-import HeaderMarker from '@/app/components/HeaderMarker'
+'use client'
+
 import PageHeader from '@/app/components/PageHeader'
 import PageLogoCloud from '@/app/components/PageLogoCloud'
 import PageSection from '@/app/components/PageSection'
-import StatGridStat from '@/app/components/StatGridStat'
 import VerticalNav from '@/app/components/VerticalNav'
 import WorkHero from '@/app/components/WorkHero'
 import { NavItem } from '@/app/types'
+import Accomplishments from '@/app/work/mmm/accomplishments'
 import {
     faArrowLeft,
-    faArrowUp,
+    faSearch,
     faStar,
     faTimeline,
     faToolbox,
     faUser,
 } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import Lightbox from 'yet-another-react-lightbox'
+import 'yet-another-react-lightbox/styles.css'
 
 const workData = {
     company: '3M',
     name: 'HAMR',
     role: 'Design/Client Engineer',
-    blurb: 'Led design and client build of an internal product data management tool from the ground up to handle for the management of 190+ million records.',
-    dates: '2017-current',
+    blurb: 'Led design and client build of an internal product data management tool from the ground up to handle for the management of 66+ million records across 87 locales.',
+    dates: '2017-2025',
     logo: '3M_wordmark.png',
 }
 
 const navItems: NavItem[] = [
     { id: 'work-hero', label: 'About', icon: faUser },
     { id: 'accomplishments', label: 'Accomplishments', icon: faStar },
+    { id: 'search', label: 'Enterprise Search', icon: faSearch },
     { id: 'pcm', label: 'PCM', icon: faTimeline },
     { id: 'technical-highlights', label: 'Technical Highlights', icon: faToolbox },
-    { id: 'note-on-included-screenshots', label: 'Note on Included Screenshots', icon: faStar },
-    { id: 'related-to-design-engineer-role', label: 'Related to Design Engineer Role', icon: faTimeline },
+]
+
+const images = [
+    {
+        id: 0,
+        src: '/work/mmm/HAMR-PCM-ActivityLog-1.webp',
+        alt: 'PCM Activity Log',
+    },
+    {
+        id: 1,
+        src: '/work/mmm/HAMR-Dashboard-1.webp',
+        alt: 'HAMR Dashboard',
+    },
+    {
+        id: 2,
+        src: '/work/mmm/HAMR-PCM-Editor-1.webp',
+        alt: 'HAMR PCM Editor',
+    },
+    {
+        id: 3,
+        src: '/work/mmm/HAMR-Search-1.webp',
+        alt: 'HAMR Search',
+    },
+    {
+        id: 4,
+        src: '/work/mmm/HAMRv3-Dashboard-1.png',
+        alt: 'HAMR v3 Dashboard',
+    },
+    {
+        id: 5,
+        src: '/work/mmm/HAMR-Report-1.webp',
+        alt: 'HAMR Report',
+    },
+
+    {
+        id: 6,
+        src: '/work/mmm/HAMR-PCM-Precheck-1.webp',
+        alt: 'HAMR PCM Precheck',
+    },
 ]
 
 export default function Home() {
+    const [index, setIndex] = useState(-1)
+
     return (
         <main className='flex min-h-screen flex-col items-center justify-between'>
             {/* Theme Toggle */}
@@ -47,65 +90,126 @@ export default function Home() {
             {/* Vertical Navigation */}
             <VerticalNav navItems={navItems} />
 
-            <WorkHero title={workData.name} company={'3M'} dateStart={'2017-04-01'} dateEnd={null} logo={workData.logo}>
+            <WorkHero
+                title={workData.name}
+                company={'3M'}
+                dateStart={'2017-04-01'}
+                dateEnd={'2025-07-01'}
+                logo={workData.logo}
+            >
                 <p className='mt-4 text-base leading-7 text-zinc-600 md:mt-6 md:text-xl md:leading-8 dark:text-white'>
                     What started as an opportunity for me to design and implement an internal tool to manage keyword
-                    data for SEO led to building an enterprise level product data management platform. Currently, I now
-                    lead design and client build of an internal product data management tool from the ground up to
-                    handle for the management of 66+ million records across 87 locales globally.
+                    data for SEO led to 8 years as a design engineer for an enterprise level product data management
+                    platform. Currently, I now lead design and client build of an internal product data management tool
+                    from the ground up to handle for the management of 66+ million records across 87 locales globally.
                 </p>
                 <p className='mt-4 text-base leading-7 text-zinc-600 md:mt-6 md:text-xl md:leading-8 dark:text-white'>
-                    When a new product is introduced it makes its way to the HAMR database. HAMR has done its part to
-                    improve several internal processes in reporting, dashboarding, discovery and KPI measurement. In
-                    addition to saving time and money, it has also improved the QoL of the user. I love when I've
-                    contributed to a technology that makes someone's life easier and can see that happening in real
-                    time.
+                    Every new product enters the HAMR database, where it becomes part of our comprehensive data
+                    ecosystem. HAMR has transformed our internal operations by streamlining reporting, enhancing
+                    dashboard capabilities, improving data discovery, and enabling precise KPI tracking. Beyond the
+                    tangible benefits of time and cost savings, what truly excites me is seeing how HAMR directly
+                    improves our users' daily work experience. There's nothing more rewarding than witnessing firsthand
+                    how technology can make someone's work life better and more efficient.
                 </p>
             </WorkHero>
 
             <PageSection id='accomplishments' className='max-w-4xl bg-transparent px-4'>
                 <PageHeader
                     title='Accomplishments'
-                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl ' }}
+                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
                 >
                     <p className='lead'>
                         In case you are feeling a bit "TL;DR" at the moment, here are a few tidbits that make me proud
                         to have been a core member of the HAMR team.
                     </p>
                 </PageHeader>
-                <div className='mx-auto w-full max-w-3xl px-4'>
-                    <div className='mt-6 rounded-xl bg-gradient-to-br from-lime-500 via-lime-600 to-lime-700 p-8 shadow-lg'>
-                        <ul className='space-y-4 text-base leading-7 text-zinc-700'>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>Led design and front-end development</span> of
-                                enterprise product data management platform leading to a{' '}
-                                <span className='font-semibold'>productivity savings of 4.7 hours per page</span>
-                            </li>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>Modernized search and reporting experience </span> of
-                                the global assortment of records leading to a drastically reduced effort to find and
-                                report on 60+ million product and 20+ million asset records across 87 global locales
-                            </li>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>Greatly improved the developer experience</span> for
-                                other devs by championing several iterations of the techstack when the opportunity
-                                presented itself
-                            </li>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>Developed custom virtualized table component</span>{' '}
-                                optimizing performance by 300% for large dataset rendering
-                            </li>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>
-                                    Delivered 6,568 commits and 1.47 million lines of code over 8 years
-                                </span>
-                            </li>
-                            <li className='rounded-lg bg-white/10 p-4 text-lime-50 shadow-sm ring-1 ring-white/30 backdrop-blur-md transition-shadow hover:shadow-md'>
-                                <span className='font-semibold'>Transformed enterprise tool adoption</span> by
-                                prioritizing user experience design over traditional "buy not build" solutions, leading
-                                to a <span className='font-semibold'>20% increase in adoption YoY</span>
-                            </li>
-                        </ul>
+                <Accomplishments />
+            </PageSection>
+
+            <PageSection id='search' className='max-w-5xl bg-transparent px-0'>
+                <PageHeader
+                    title='Enterprise Search'
+                    theme={{
+                        container: 'mx-auto w-full max-w-2xl px-4',
+                        header: 'sm:text-4xl',
+                    }}
+                >
+                    <p className='lead'>
+                        The HAMR platform is built on top of Elasticsearch, a very powerful search and analytics engine,
+                        which we leveraged as the source of truth for product and asset data. This search view, widely
+                        beloved as the best way to search and report on product data at 3M, is used by thousands of
+                        users in various levels of the company.
+                    </p>
+                </PageHeader>
+
+                <div className='col-span-3 mt-10 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
+                    <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
+                        <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Query Builder</h2>
+                        <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                            Our users needed to be able to build complex queries to search for product data. I built a
+                            query builder that allows users to build queries using a fluent interface. Finding the
+                            fields they needed from the 8,000+ possible attributes is a zippy process now. The query
+                            builder allows for an operator, various compilers and a robust value picker. It also
+                            supports advanced date operations and logical grouping.
+                        </p>
+                    </div>
+                    <div
+                        className='relative mt-6 flex grow cursor-pointer items-center justify-center rounded-lg shadow-lg'
+                        onClick={() => setIndex(3)}
+                    >
+                        <img
+                            src={images[3].src}
+                            className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                        />
+                    </div>
+                    <div className='mt-2 flex justify-end text-xs text-indigo-100'>2025 (v3)</div>
+                </div>
+
+                <div className='col-span-3 mt-10 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
+                    <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
+                        <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Report View</h2>
+                        <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                            The report view is driven by AG Grid, the most powerful data grid on the market. Very
+                            necessary for handling large datasets (one locale could have 1,000,000+ records and this
+                            view can handle it).
+                        </p>
+                    </div>
+                    <div
+                        className='relative mt-6 flex grow cursor-pointer items-center justify-center rounded-lg shadow-lg'
+                        onClick={() => setIndex(5)}
+                    >
+                        <img
+                            src={images[5].src}
+                            className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                        />
+                    </div>
+                    <div className='mt-2 flex justify-end text-xs text-indigo-100'>2025 (v3)</div>
+                </div>
+
+                <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
+                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
+                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Dashboards</h2>
+                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                                Enabled by the efficiency and scalability of Elasticsearch, I was able to build an
+                                advanced dashboarding system that can handle nested aggregations of large datasets. The
+                                primary difference between this view and the Report view is that the data in this grid
+                                is specially formatted in deeply nested structure. Behind the scenes, I created a custom
+                                data transformer that could handle the complex data structure and display it in a way
+                                that was easy for AG Grid to understand and use. Additionally, the whole dataset,
+                                1,000,000+ records, is loaded into memory in the client side and virtualized.
+                            </p>
+                        </div>
+                        <div
+                            className='relative mt-6 flex grow cursor-pointer items-center justify-center rounded-lg shadow-lg'
+                            onClick={() => setIndex(1)}
+                        >
+                            <img
+                                src={images[1].src}
+                                className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                            />
+                        </div>
+                        <div className='mt-2 flex justify-end text-xs text-indigo-100'>2025 (v3)</div>
                     </div>
                 </div>
             </PageSection>
@@ -113,160 +217,176 @@ export default function Home() {
             <PageSection id='pcm' className='max-w-5xl bg-transparent px-0'>
                 <PageHeader
                     title='PCM (Product Content Management)'
-                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl ' }}
-                    label='2023'
+                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
                 >
                     <p className='lead'>
                         PCM is a product data management tool that allows users to manage global product data. After a
                         complete rearchitecture of the ETL pipeline, HAMR had an API that enabled the managememnt
-                        lifecycle of product data updates to be minutes instead of days. backend that was capable of
-                        handling 66+ million records across 87 locales.
+                        lifecycle of product data updates to be minutes instead of days.
+                    </p>
+                    <p className='lead'>
+                        I rapidly designed and coded the following interfaces to meet the demands of the multiple
+                        businesses that were piloting these tools. Our small core team was the winner of the 2024 3M
+                        Global Marketing Excellence Award for the PCM project.
                     </p>
                 </PageHeader>
 
                 <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
-                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-indigo-500/40 via-indigo-900/50 to-indigo-800/80 p-5 md:flex-row md:space-x-8'>
-                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center text-center md:mb-0'>
-                            <h2 className='text-base font-bold text-zinc-800 sm:text-xl dark:text-white'>
-                                Activity Feed
-                            </h2>
-                            <p className='mt-1.5 text-sm font-light sm:text-base dark:text-white'>
-                                With custom combobox, including advanced mention tagging, for comments.
+                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
+                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Product Editor</h2>
+                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                                The product editor view makes it possible to quickly make edits to product data more
+                                efficiently by providing a more structured anatomy of the product data, using modern
+                                interfaces and leveraging LLMs.
                             </p>
                         </div>
-                        <div className='relative flex max-w-md grow items-center justify-center overflow-hidden rounded-sm shadow-lg'>
-                            <img src={`/work/mmm/PCM_ActivityLog.png`} className='object-cover' />
+                        <div
+                            className='relative mt-6 flex grow cursor-pointer items-center justify-center rounded-lg shadow-lg'
+                            onClick={() => setIndex(2)}
+                        >
+                            <img
+                                src={images[2].src}
+                                className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                            />
+                        </div>
+                        <div className='mt-2 flex justify-end text-xs text-indigo-100'>
+                            2023 (v2) &middot; Shown with test data
+                        </div>
+                    </div>
+                </div>
+
+                <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
+                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
+                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Precheck</h2>
+                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                                With a fair amount of prompt iteration and RAG, I rapidly prototyped a content precheck
+                                that could check the written content for a number of issues, which would otherwise need
+                                to caught by different people at different moments in the approval workflow.
+                            </p>
+                        </div>
+                        <div
+                            className='relative mt-6 flex grow cursor-pointer items-center justify-center rounded-lg shadow-lg'
+                            onClick={() => setIndex(6)}
+                        >
+                            <img
+                                src={images[6].src}
+                                className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                            />
+                        </div>
+                        <div className='mt-2 flex justify-end text-xs text-indigo-100'>
+                            2024 (v2) &middot; Shown with test data
+                        </div>
+                    </div>
+                </div>
+
+                <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
+                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5 md:flex-row md:space-x-8'>
+                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center text-center md:mb-0'>
+                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Activity Feed</h2>
+                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                                For the first time, users can now easily see the history of changes to a product,
+                                including who made the change, the approval workflow and status changes.
+                            </p>
+                        </div>
+                        <div>
+                            <div
+                                className='relative flex max-w-md grow cursor-pointer items-center justify-center rounded-sm shadow-lg'
+                                onClick={() => setIndex(0)}
+                            >
+                                <img
+                                    src={images[0].src}
+                                    className='rounded-lg object-cover transition-all duration-300 hover:scale-102'
+                                />
+                            </div>
+                            <div className='mt-2 flex justify-end text-xs text-indigo-100'>
+                                2023 (v2) &middot; Shown with test data
+                            </div>
                         </div>
                     </div>
                 </div>
             </PageSection>
 
-            <PageSection>
-                <dl className='grid grid-cols-2 gap-5 text-center'>
-                    <StatGridStat title={'Productivity per page'} subTitle={'hours saved'}>
-                        <dd className='mt-1 text-4xl font-semibold tracking-tight text-zinc-900'>4.7</dd>
-                    </StatGridStat>
-                    <StatGridStat title={'Page views'} subTitle={'as of Q1 2024'}>
-                        <dd className='mt-1 flex items-center justify-center space-x-3 text-4xl font-semibold tracking-tight text-zinc-900'>
-                            <FontAwesomeIcon icon={faArrowUp} className='w-3 text-green-500 md:w-4' />
-                            <span className='text-2xl md:text-4xl'>26.5%</span>
-                        </dd>
-                    </StatGridStat>
-                </dl>
+            <PageSection id='testimonials' className='max-w-5xl bg-transparent px-0'>
+                <PageHeader
+                    title='Overheard'
+                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
+                >
+                    <p className='lead'>Below are some quotes from users of the HAMR platform.</p>
+                </PageHeader>
 
-                <PageLogoCloud
-                    cols={PageLogoCloud.cols.THREE}
-                    className={'mt-5'}
-                    technologies={[
-                        'Vue',
-                        'Vite',
-                        'TailwindCSS',
-                        'Typescript',
-                        'PHP',
-                        'Laravel',
-                        'MySQL',
-                        'Elasticsearch',
-                        'OpenAI',
-                    ]}
-                />
-
-                <div className='mt-5 grid grid-cols-5 gap-5'>
-                    <div className='relative col-span-3 h-full overflow-hidden rounded-lg bg-zinc-50'>
-                        <Image
-                            src='/work/mmm/JK-Github-Contribution-MMM-2.png'
-                            width={550}
-                            height={400}
-                            className='absolute -right-10 bottom-0 w-[550px] max-w-[2000px] rounded-lg shadow-xl md:-left-[150px]'
-                            alt='JK Github screenshot'
-                        />
+                <div className='mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "For image remediation, it was a genius way to manage finding and managing all the
+                            division's assets."
+                        </p>
                     </div>
-                    <div className='col-span-2 rounded-2xl'>
-                        <dl className='grid grid-cols-1 gap-5 text-center'>
-                            <StatGridStat title={'Commits'} subTitle={'over 7 years'}>
-                                <dd className='mt-1 text-2xl font-semibold tracking-tight text-zinc-900 md:text-4xl'>
-                                    6,568
-                                </dd>
-                            </StatGridStat>
-                            <StatGridStat title={'Additions'} subTitle={'on main repo'}>
-                                <dd className='mt-1 text-2xl font-semibold tracking-tight text-zinc-900 md:text-4xl'>
-                                    1.47mil
-                                </dd>
-                            </StatGridStat>
-                        </dl>
-                    </div>
-                </div>
 
-                <div className='mt-5 grid grid-cols-3 gap-5 md:h-[440px]'>
-                    <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-yellow-200 to-yellow-500 p-3 md:flex-row md:space-x-8 md:p-5'>
-                        <div className='mx-auto mb-6 flex w-[250px] shrink-0 flex-col items-center justify-center text-center text-white md:mb-0'>
-                            <h2 className='text-base font-bold'>Activity Feed</h2>
-                            <p className='mt-1.5 text-sm font-light text-white'>
-                                With custom combobox, including advanced mention tagging, for comments.
-                            </p>
-                        </div>
-                        <div className='relative grow'>
-                            <img
-                                src={`/work/mmm/PCM_ActivityLog.png`}
-                                className='top-2 right-2 w-[300px] max-w-[1000px] rounded-lg shadow-2xl md:absolute'
-                            />
-                        </div>
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "HAMR has consolidated and greatly simplified much of the reporting my team relies on to
+                            complete our work."
+                        </p>
                     </div>
-                </div>
 
-                <div className='mt-5 grid grid-cols-3 gap-5 md:h-[390px]'>
-                    <div className='bg-gradient-radial col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl from-lime-500 via-violet-900 to-lime-500 p-3 md:p-7'>
-                        <div className='mx-auto max-w-sm shrink-0 text-center text-white'>
-                            <h2 className='text-lg font-bold'>Enterprise Query Builder</h2>
-                            <p className='mt-1.5 text-sm font-light text-white'>
-                                With custom combobox, including advanced mention tagging, for comments.
-                            </p>
-                        </div>
-                        <div className='relative min-h-px grow'>
-                            <img src={`/work/mmm/HAMRv3-sqb.png`} className='rounded-lg shadow-2xl' />
-                        </div>
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "It is the only easy place to search for assets that are approved to use in educational
+                            presentations, etc..."
+                        </p>
                     </div>
-                </div>
 
-                <div className='mt-5 grid grid-cols-3 gap-5 md:h-[390px]'>
-                    <div className='col-span-3 flex flex-col justify-between space-y-4 overflow-hidden rounded-xl bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-lime-500 via-violet-900 to-lime-500 p-3 md:p-7'>
-                        <div className='mx-auto max-w-sm shrink-0 text-center text-white'>
-                            <h2 className='text-base font-bold'>Dashboard</h2>
-                            <p className='mt-1.5 text-sm font-light text-white'>
-                                It's got the works. Whole layout using Tailwind classes. Fully virtualized table.
-                            </p>
-                        </div>
-                        <div className='relative min-h-px grow'>
-                            <img
-                                src={`/work/mmm/HAMRv3-Dashboard-1.png`}
-                                className='w-full max-w-[2000px] rounded-lg shadow-2xl'
-                            />
-                        </div>
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "It helps me every day, identifies content gaps. I rely 100% on that tool and wouldn't be
+                            able to conduct my duties without it."
+                        </p>
+                    </div>
+
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "Dashboards have assisted us with identifying prioritized gap-filling opportunities for
+                            photography. HAMR is also part of our documented analysis process."
+                        </p>
+                    </div>
+
+                    <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
+                        <p className='text-sm font-light text-indigo-100'>
+                            "...ensures that our distribution websites stay up to date with current information."
+                        </p>
                     </div>
                 </div>
             </PageSection>
 
             <section id='toolkit' className='mx-auto w-full max-w-3xl'>
-                <PageHeader title='Toolkit' theme={{ container: 'sm:px-6 sm:py-10 max-w-3xl', header: 'sm:text-4xl' }}>
+                <PageHeader
+                    title='Toolkit'
+                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
+                >
                     <p className='lead'>The following technologies are being used to build this project.</p>
                 </PageHeader>
+
                 <PageLogoCloud
                     cols={PageLogoCloud.cols.TWO}
-                    className={'mt-5'}
+                    className={'mt-10'}
                     technologies={[
-                        'Vue',
-                        'Vite',
-                        'TailwindCSS',
-                        'Typescript',
-                        'PHP',
+                        'Docker',
+                        'Elasticsearch',
                         'Laravel',
                         'MySQL',
-                        'Elasticsearch',
                         'OpenAI',
+                        'PHP',
+                        'TailwindCSS',
+                        'Typescript',
+                        'Vite',
+                        'Vue',
                     ]}
                 />
             </section>
 
-            <PageSection className='max-w-3xl bg-transparent px-0'>
+            {/* <PageSection className='max-w-3xl bg-transparent px-0'>
                 <PageHeader
                     title='Technical highlights'
                     theme={{ container: 'mx-auto w-full max-w-3xl px-0', header: 'sm:text-4xl ' }}
@@ -315,43 +435,17 @@ export default function Home() {
                         </p>
                     </div>
                 </div>
-            </PageSection>
+            </PageSection> */}
 
-            <PageSection className='max-w-5xl bg-transparent px-0'>
-                <HeaderMarker
-                    color={HeaderMarker.color.SKY}
-                    icon={HeaderMarker.icon.TAILWIND}
-                    size={HeaderMarker.size.SMALL}
-                />
-                <PageHeader
-                    title='Related to Design Engineer role!'
-                    theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl ' }}
-                >
-                    <p className='lead'>
-                        This job might very well be the final stage in preparing me for the title of "Design Engineer".
-                        I've been made into an expert of the art of designing in code. Last summer I sold the
-                        organization on a complete front end technology migration effort. A major piece of that is a
-                        multi-phase rollout of Tailwind as the sole style framework.
-                    </p>
-                    <p className='mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400'>
-                        I have also been greatly prepared for managing user expectations and input. The "Issues" tab of
-                        a highly popular Github repo can be very daunting for a small product team. Similarly, the
-                        issues backlog of an enterprise level software that is used by 10,000 plus corporate employees
-                        and contract marketers can be daunting for a small product team. Through brute force, we've
-                        adapted and learned to manage this process using one key tool: transparency. It's important to
-                        be smart about what you can and can't show and tell to users, but always be honest and striving
-                        to tell them as much as possible.
-                    </p>
-                    <p className='mt-6 max-w-xl text-base leading-6 text-zinc-600 dark:text-zinc-400'>
-                        Another big lesson learned has been that "Yes to death" is an almost certain death. I can expand
-                        more on my experience and expectation there if/when the time comes, but your interaction history
-                        with the TailwindCSS users let's me feel good knowing that you know the value of both "Yes" and
-                        "No" in product development.
-                    </p>
-                </PageHeader>
-            </PageSection>
+            <Lightbox
+                slides={images}
+                open={index >= 0}
+                index={index}
+                close={() => setIndex(-1)}
+                carousel={{ finite: false }}
+            />
 
-            <div className='relative mx-auto w-full max-w-3xl bg-white px-8 pb-6 md:px-16'>
+            <div className='relative mx-auto my-10 w-full max-w-3xl px-8 pb-6 md:px-16'>
                 <Link href='/' className='inline-flex items-center text-blue-600 hover:text-blue-500 hover:underline'>
                     <FontAwesomeIcon icon={faArrowLeft} className='mr-2 h-3 w-3' />
                     <span>Back to main page</span>
