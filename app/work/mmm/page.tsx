@@ -19,6 +19,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import { useState } from 'react'
 import Lightbox from 'yet-another-react-lightbox'
+import Zoom from 'yet-another-react-lightbox/plugins/zoom'
 import 'yet-another-react-lightbox/styles.css'
 
 const workData = {
@@ -443,6 +444,7 @@ export default function Home() {
                 index={index}
                 close={() => setIndex(-1)}
                 carousel={{ finite: false }}
+                plugins={[Zoom]}
             />
 
             <div className='relative mx-auto my-10 w-full max-w-3xl px-8 pb-6 md:px-16'>
