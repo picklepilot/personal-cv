@@ -126,7 +126,7 @@ export default function Home() {
                 <Accomplishments />
             </PageSection>
 
-            <PageSection id='search' className='max-w-5xl bg-transparent px-0'>
+            <PageSection id='search' className='max-w-5xl bg-transparent px-4'>
                 <PageHeader
                     title='Enterprise Search'
                     theme={{
@@ -143,9 +143,9 @@ export default function Home() {
                 </PageHeader>
 
                 <div className='col-span-3 mt-10 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
-                    <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
-                        <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Query Builder</h2>
-                        <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                    <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center py-4 text-center sm:max-w-2xl md:mb-0'>
+                        <h2 className='text-xl font-bold text-indigo-50'>Query Builder</h2>
+                        <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                             Our users needed to be able to build complex queries to search for product data. I built a
                             query builder that allows users to build queries using a fluent interface. Finding the
                             fields they needed from the 8,000+ possible attributes is a zippy process now. The query
@@ -166,9 +166,9 @@ export default function Home() {
                 </div>
 
                 <div className='col-span-3 mt-10 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
-                    <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
-                        <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Report View</h2>
-                        <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                    <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center py-4 text-center sm:max-w-2xl md:mb-0'>
+                        <h2 className='text-xl font-bold text-indigo-50'>Report View</h2>
+                        <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                             The report view is driven by AG Grid, the most powerful data grid on the market. Very
                             necessary for handling large datasets (one locale could have 1,000,000+ records and this
                             view can handle it).
@@ -188,9 +188,9 @@ export default function Home() {
 
                 <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
                     <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
-                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
-                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Dashboards</h2>
-                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                        <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center py-4 text-center sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-xl font-bold text-indigo-50'>Dashboards</h2>
+                            <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                                 Enabled by the efficiency and scalability of Elasticsearch, I was able to build an
                                 advanced dashboarding system that can handle nested aggregations of large datasets. The
                                 primary difference between this view and the Report view is that the data in this grid
@@ -214,7 +214,7 @@ export default function Home() {
                 </div>
             </PageSection>
 
-            <PageSection id='pcm' className='max-w-5xl bg-transparent px-0'>
+            <PageSection id='pcm' className='max-w-5xl bg-transparent px-4'>
                 <PageHeader
                     title='PCM (Product Content Management)'
                     theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
@@ -233,9 +233,9 @@ export default function Home() {
 
                 <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
                     <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
-                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
-                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Product Editor</h2>
-                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                        <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center py-4 text-center sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-xl font-bold text-indigo-50'>Product Editor</h2>
+                            <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                                 The product editor view makes it possible to quickly make edits to product data more
                                 efficiently by providing a more structured anatomy of the product data, using modern
                                 interfaces and leveraging LLMs.
@@ -258,9 +258,9 @@ export default function Home() {
 
                 <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
                     <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5'>
-                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center py-4 text-center sm:w-full sm:max-w-2xl md:mb-0'>
-                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Precheck</h2>
-                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                        <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center py-4 text-center sm:max-w-2xl md:mb-0'>
+                            <h2 className='text-xl font-bold text-indigo-50'>Precheck</h2>
+                            <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                                 With a fair amount of prompt iteration and RAG, I rapidly prototyped a content precheck
                                 that could check the written content for a number of issues, which would otherwise need
                                 to caught by different people at different moments in the approval workflow.
@@ -283,9 +283,9 @@ export default function Home() {
 
                 <div className='mt-10 grid h-auto grid-cols-3 gap-5'>
                     <div className='col-span-3 flex flex-col overflow-hidden rounded-xl bg-gradient-to-r from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-5 md:flex-row md:space-x-8'>
-                        <div className='mx-auto mb-4 flex w-[250px] shrink-0 flex-col items-center justify-center text-center md:mb-0'>
-                            <h2 className='text-base font-bold text-indigo-50 sm:text-xl'>Activity Feed</h2>
-                            <p className='mt-1.5 text-sm font-light text-indigo-100 sm:text-base'>
+                        <div className='mx-auto mb-4 flex w-full shrink-0 flex-col items-center justify-center text-center md:mb-0'>
+                            <h2 className='text-xl font-bold text-indigo-50'>Activity Feed</h2>
+                            <p className='mt-1.5 text-base font-light text-indigo-100 sm:text-base'>
                                 For the first time, users can now easily see the history of changes to a product,
                                 including who made the change, the approval workflow and status changes.
                             </p>
@@ -308,7 +308,7 @@ export default function Home() {
                 </div>
             </PageSection>
 
-            <PageSection id='testimonials' className='max-w-5xl bg-transparent px-0'>
+            <PageSection id='testimonials' className='max-w-5xl bg-transparent px-4'>
                 <PageHeader
                     title='Overheard'
                     theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}
@@ -316,7 +316,7 @@ export default function Home() {
                     <p className='lead'>Below are some quotes from users of the HAMR platform.</p>
                 </PageHeader>
 
-                <div className='mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3'>
+                <div className='mt-6 grid grid-cols-1 gap-2 sm:mt-10 sm:gap-6 md:grid-cols-2 lg:grid-cols-3'>
                     <div className='flex flex-col overflow-hidden rounded-xl bg-gradient-to-b from-indigo-800/70 via-indigo-900/90 to-indigo-800/80 p-6'>
                         <p className='text-sm font-light text-indigo-100'>
                             "For image remediation, it was a genius way to manage finding and managing all the
@@ -360,7 +360,7 @@ export default function Home() {
                 </div>
             </PageSection>
 
-            <section id='toolkit' className='mx-auto w-full max-w-3xl'>
+            <section id='toolkit' className='mx-auto w-full max-w-3xl px-4'>
                 <PageHeader
                     title='Toolkit'
                     theme={{ container: 'mx-auto w-full max-w-2xl px-4', header: 'sm:text-4xl' }}

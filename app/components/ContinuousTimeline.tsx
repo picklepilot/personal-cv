@@ -19,7 +19,7 @@ export default function ContinuousTimeline({ children }: ContinuousTimelineProps
     return (
         <div ref={containerRef} className='relative px-4 sm:px-0'>
             {/* Continuous Timeline Line */}
-            <div className='absolute left-15 z-9 -ml-px h-[calc(100%+2rem)] w-[2px] bg-zinc-400 sm:left-25'>
+            <div className='absolute left-15 z-9 -ml-px h-[calc(100%+2rem)] w-[2px] bg-zinc-400 sm:left-12 md:left-17 lg:left-25'>
                 <motion.div
                     className='w-full bg-lime-500'
                     style={{
