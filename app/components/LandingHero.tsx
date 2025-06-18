@@ -37,21 +37,23 @@ export default function LandingHero() {
                     <div className='relative order-1 lg:col-span-3 lg:row-span-3'>
                         <div className='absolute inset-px rounded-4xl bg-white shadow-lg dark:bg-zinc-800'></div>
                         <div className='relative flex h-full flex-col overflow-hidden'>
-                            <div className='@container relative mx-auto min-h-[600px] w-full grow sm:min-h-96 lg:min-h-120'>
+                            <div className='@container relative mx-auto min-h-[500px] w-full grow md:h-[600px] lg:h-[600px]'>
                                 {/* JK Picture with Animations */}
                                 <JKPictureWithAnimations />
 
-                                <div className='absolute inset-px z-20 flex rounded-4xl bg-gradient-to-t from-amber-900/0 via-amber-900/20 to-amber-900/40 p-6 transition-all duration-700 sm:bg-gradient-to-r dark:from-black/0 dark:via-black/20 dark:to-black/40'>
-                                    <div className='pointer-events-auto flex w-full transform flex-col p-6 text-right text-lime-400 transition-all duration-500 hover:translate-y-[-4px] sm:justify-between sm:p-4 sm:px-6 sm:py-8 dark:text-lime-400'>
-                                        <h3 className='text-center text-[70px]/18 font-bold transition-all duration-300 sm:grow sm:text-right sm:text-[130px]/24'>
-                                            Justin <br /> Kaczmar
+                                <div className='absolute inset-px z-30 flex rounded-4xl bg-gradient-to-t from-amber-900/0 via-amber-900/20 to-amber-900/40 p-6 transition-all duration-700 sm:bg-gradient-to-r dark:from-black/0 dark:via-black/20 dark:to-black/40'>
+                                    <div className='pointer-events-auto flex w-full transform flex-col p-0 text-right text-lime-400 transition-all duration-500 hover:translate-y-[-4px] sm:justify-between sm:px-4 sm:py-0 dark:text-lime-400'>
+                                        <h3 className='text-center text-[80px]/18 font-bold transition-all duration-300 sm:grow sm:text-left sm:text-[170px]/40'>
+                                            Justin Kaczmar
                                         </h3>
-                                        <LandingHeroHeader />
+
                                         {/* <p className='mt-5 text-center text-lg text-zinc-900/20 opacity-90 transition-all duration-300 hover:opacity-100 sm:mt-2 sm:text-right sm:text-base'>
                                             Design Engineer
                                         </p> */}
                                     </div>
                                 </div>
+
+                                <LandingHeroHeader />
 
                                 {/* <div className='absolute inset-0 z-20 flex items-center justify-end p-6 transition-all duration-700'>
                                     <div className='relative z-10 flex h-auto w-full flex-col items-start rounded-3xl border border-white/20 bg-white/10 p-8 shadow-2xl backdrop-blur-md transition-all duration-300 sm:w-1/2 sm:rounded-2xl dark:border-white/10 dark:bg-black/20'>

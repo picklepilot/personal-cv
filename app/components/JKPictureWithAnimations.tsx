@@ -13,23 +13,26 @@ export default function LandingHero() {
     const [isHydrated, setIsHydrated] = useState(false)
     const [isHovering, setIsHovering] = useState(false)
     const [isDragging, setIsDragging] = useState(false)
+    const [offset, setOffset] = useState(80)
     const constraintsRef = useRef(null)
 
-    const [snapPoint, setSnapPoint] = useState({ x: -61, y: 51 }) // Default values
-    const [startingPosition, setStartingPosition] = useState({ x: -61 + 200, y: 51 - 200 }) // Default values
+    const [snapPoint, setSnapPoint] = useState({ x: 94, y: 24 }) // Default values
+    const [startingPosition, setStartingPosition] = useState({ x: 94, y: 24 }) // Default values
 
     // Update snap point and starting position based on window size
     useEffect(() => {
         const updatePositions = () => {
             const width = window.innerWidth
+            // const offset = width < 640 ? 30 : 80
+            setOffset(width < 640 ? 30 : 80)
             const newSnapPoint = {
-                x: width < 640 ? 132 : width < 768 ? 195 : width < 1024 ? -61 : -61,
-                y: width < 640 ? 210 : width < 768 ? 121 : width < 1024 ? 51 : 45,
+                x: width < 640 ? 155 : width < 768 ? 195 : width < 1024 ? 84 : 94,
+                y: width < 640 ? -10 : width < 768 ? 121 : width < 1024 ? 10 : 24,
             }
             setSnapPoint(newSnapPoint)
             setStartingPosition({
-                x: newSnapPoint.x + 200,
-                y: newSnapPoint.y - 200,
+                x: newSnapPoint.x,
+                y: newSnapPoint.y - offset,
             })
         }
 
@@ -60,49 +63,45 @@ export default function LandingHero() {
         return Math.sqrt(Math.pow(point2.x - point1.x, 2) + Math.pow(point2.y - point1.y, 2))
     }
 
-    // Handle drag start - check if moving away from face
+    // The two allowed Y positions for the sunglasses
+    const onFaceY = snapPoint.y
+    const offFaceY = snapPoint.y - offset
+
+    // Update sunglassesX to always be at snapPoint.x
+    useEffect(() => {
+        sunglassesX.set(snapPoint.x)
+    }, [snapPoint.x, sunglassesX])
+
+    // Handle drag start
     const handleDragStart = () => {
         setIsDragging(true)
-        if (sunglassesOnFace) {
-            // If sunglasses were on face and now being dragged, switch to dark mode
-            setTheme('dark')
-            setSunglassesOnFace(false)
-        }
     }
 
-    // Handle drag end to check for snapping
+    // Handle drag end for lightswitch pattern
     const handleDragEnd = () => {
         setIsDragging(false)
-        const currentX = sunglassesX.get()
         const currentY = sunglassesY.get()
-        const currentPosition = { x: currentX, y: currentY }
-
-        console.log('currentPosition', currentPosition)
-
-        const distance = calculateDistance(currentPosition, snapPoint)
-
-        console.log('distance', distance)
-
-        if (distance <= snapRadius) {
-            // Snap to the point
+        // Find which position is closer
+        const distToOn = Math.abs(currentY - onFaceY)
+        const distToOff = Math.abs(currentY - offFaceY)
+        if (distToOn < distToOff) {
+            // Snap to on-face
             sunglassesControls.start({
                 x: snapPoint.x,
-                y: snapPoint.y,
-                transition: {
-                    type: 'spring',
-                    stiffness: 600,
-                    damping: 25,
-                },
+                y: onFaceY,
+                transition: { type: 'spring', stiffness: 600, damping: 25 },
             })
-            // Update motion values to match
-            sunglassesX.set(snapPoint.x)
-            sunglassesY.set(snapPoint.y)
-
-            // Sunglasses are now on face - switch to light mode
+            sunglassesY.set(onFaceY)
             setSunglassesOnFace(true)
             setTheme('light')
         } else {
-            // Sunglasses are not on face - ensure dark mode
+            // Snap to off-face
+            sunglassesControls.start({
+                x: snapPoint.x,
+                y: offFaceY,
+                transition: { type: 'spring', stiffness: 600, damping: 25 },
+            })
+            sunglassesY.set(offFaceY)
             setSunglassesOnFace(false)
             setTheme('dark')
         }
@@ -137,40 +136,26 @@ export default function LandingHero() {
     useEffect(() => {
         if (!isHydrated) return
 
-        // Skip if this is the initial theme setup
         if (theme === 'light' && !sunglassesOnFace && !isDragging) {
             // Theme changed to light externally, move sunglasses to face
             setSunglassesOnFace(true)
             sunglassesControls.start({
                 x: snapPoint.x,
-                y: snapPoint.y,
+                y: onFaceY,
                 transition: { type: 'spring', stiffness: 600, damping: 25 },
             })
-            sunglassesX.set(snapPoint.x)
-            sunglassesY.set(snapPoint.y)
+            sunglassesY.set(onFaceY)
         } else if (theme === 'dark' && sunglassesOnFace && !isDragging) {
-            // Theme changed to dark externally, move sunglasses away
+            // Theme changed to dark externally, move sunglasses off face
             setSunglassesOnFace(false)
-            const awayPosition = startingPosition
             sunglassesControls.start({
-                x: awayPosition.x,
-                y: awayPosition.y,
+                x: snapPoint.x,
+                y: offFaceY,
                 transition: { type: 'spring', stiffness: 600, damping: 25 },
             })
-            sunglassesX.set(awayPosition.x)
-            sunglassesY.set(awayPosition.y)
+            sunglassesY.set(offFaceY)
         }
-    }, [
-        theme,
-        isHydrated,
-        sunglassesOnFace,
-        sunglassesControls,
-        sunglassesX,
-        sunglassesY,
-        snapPoint,
-        startingPosition,
-        isDragging,
-    ])
+    }, [theme, isHydrated, sunglassesOnFace, sunglassesControls, sunglassesY, snapPoint, onFaceY, offFaceY, isDragging])
 
     // Initial theme setup - only runs once after hydration
     useEffect(() => {
@@ -231,14 +216,41 @@ export default function LandingHero() {
             className='absolute inset-0 overflow-hidden rounded-4xl bg-[#FFFFFF] dark:border-zinc-600 dark:bg-zinc-900'
         >
             <img
-                className='absolute -bottom-14 left-0 z-20 mx-auto w-full object-cover transition-all duration-700 ease-out hover:scale-105 sm:w-[435px]'
-                src='./JK-removebg.png'
+                className='absolute top-0 left-0 z-1 mx-auto w-full object-cover transition-all duration-700 ease-out hover:scale-105 sm:-top-10'
+                src='./JK-real.webp'
+                alt=''
+            />
+
+            {/* Lime green glow behind JK-cutout (animated) */}
+            <motion.div
+                className='pointer-events-none absolute top-0 left-0 z-30 mx-auto h-full w-full'
+                style={{
+                    filter: 'blur(32px)',
+                    background:
+                        'radial-gradient(circle at 50% 40%, rgba(132, 255, 110, 0.55) 0%, rgba(0,255,0,0.18) 60%, transparent 80%)',
+                }}
+                initial={{ scale: 1, opacity: 0.7 }}
+                animate={{
+                    scale: [1, 1.15, 1],
+                    opacity: [0.7, 1, 0.7],
+                }}
+                transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    ease: 'easeInOut',
+                }}
+            />
+
+            <img
+                className='absolute top-0 left-0 z-31 mx-auto w-full object-cover drop-shadow-2xl transition-all duration-700 ease-out sm:-top-10'
+                src='./JK-cutout.webp'
                 alt=''
             />
 
             {/* Creative Motion Mask Reveal Background */}
-            <motion.div
-                className='pointer-events-none absolute inset-0 z-5'
+            {/* <motion.div
+                className='pointer-events-none absolute inset-0 z-5 opacity-50'
                 style={{
                     backgroundColor: isDarkMode
                         ? 'rgba(30, 41, 59, 0.8)' // Dark slate color
@@ -248,11 +260,11 @@ export default function LandingHero() {
                 initial={{
                     clipPath: 'circle(0% at 50% 40%)', // Start from sunglasses area
                 }}
-            />
+            /> */}
 
             {/* Secondary mask layer for more complex reveal */}
-            <motion.div
-                className='pointer-events-none absolute inset-0 z-6'
+            {/* <motion.div
+                className='pointer-events-none absolute inset-0 z-6 opacity-50'
                 style={{
                     background: isDarkMode
                         ? 'radial-gradient(circle at 50% 40%, rgba(71, 85, 105, 0.6) 0%, transparent 70%)'
@@ -263,26 +275,26 @@ export default function LandingHero() {
                     scale: 1,
                     opacity: 0.5,
                 }}
-            />
+            /> */}
 
             {/* Animated Sunglasses - Always visible for dragging */}
             <motion.div
-                drag
-                dragConstraints={constraintsRef}
+                drag='y'
+                dragConstraints={{ top: offFaceY, bottom: onFaceY }}
                 dragElastic={0.1}
                 dragMomentum={false}
-                whileDrag={{ scale: 1.1, zIndex: 30 }}
-                whileHover={{ scale: sunglassesOnFace ? 1.05 : 0.6 }}
+                whileDrag={{ scale: 1.1, zIndex: 56 }}
+                whileHover={{ scale: sunglassesOnFace ? 1.05 : 1.05 }}
                 onHoverStart={() => setIsHovering(true)}
                 onHoverEnd={() => setIsHovering(false)}
-                className='absolute top-[35%] z-25 cursor-grab active:cursor-grabbing md:top-[45%] md:left-[28%]'
+                className='absolute top-[35%] z-51 cursor-grab active:cursor-grabbing md:top-[45%] md:left-[28%]'
                 style={{
-                    x: sunglassesX,
+                    x: snapPoint.x,
                     y: sunglassesY,
                 }}
                 animate={{
-                    opacity: 1, // Always visible for interaction
-                    scale: sunglassesOnFace ? 1 : 0.54, // Small when not on face, normal when on face
+                    opacity: sunglassesOnFace ? 0.95 : 0.5, // Always visible for interaction
+                    scale: sunglassesOnFace ? 1 : 1, // Small when not on face, normal when on face
                 }}
                 transition={{
                     duration: 0.3, // Faster scaling (was 0.8)
@@ -294,11 +306,11 @@ export default function LandingHero() {
                 <img
                     src='./sunglasses.png'
                     alt='Sunglasses'
-                    className='pointer-events-none aspect-auto h-auto w-[120px] drop-shadow-lg md:w-[129px]'
+                    className='pointer-events-none aspect-auto h-auto w-[85px] -rotate-2 drop-shadow-lg md:w-[174px]'
                 />
 
                 {/* Hover tooltip for when sunglasses are not on face */}
-                {!sunglassesOnFace && !isDragging && (
+                {false && !sunglassesOnFace && !isDragging && (
                     <motion.div
                         className='pointer-events-none absolute -top-12 left-1/2 -translate-x-1/2 transform rounded-lg bg-black/80 px-3 py-2 text-sm whitespace-nowrap text-white'
                         animate={{

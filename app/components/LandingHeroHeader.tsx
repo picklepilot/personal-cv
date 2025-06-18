@@ -24,16 +24,16 @@ export default function LandingHeroHeader() {
     })
 
     return (
-        <div className='relative h-[80px] md:h-[100px] lg:h-full'>
+        <div className='absolute top-[400px] z-55 h-[80px] w-full transition-all duration-700 sm:top-[500px] sm:left-10'>
             <AnimatePresence>
                 <motion.h1
-                    className='mt-7 block text-center text-xl font-medium tracking-tight text-zinc-900/20 sm:mt-9 sm:text-right sm:text-3xl md:whitespace-nowrap dark:text-zinc-100/80'
+                    className='mt-7 block text-center text-xl font-medium tracking-tight text-zinc-50/80 sm:mt-9 sm:text-center sm:text-3xl md:whitespace-nowrap lg:text-left dark:text-zinc-50/80'
                     key={headers[index].id}
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     exit={{ y: -20, opacity: 0 }}
                     transition={{ ease: 'easeInOut' }}
-                    style={{ position: 'absolute', width: '100%' }}
+                    style={{ position: 'absolute', width: '100%', zIndex: 100 }}
                 >
                     {headers[index].text}
                 </motion.h1>
