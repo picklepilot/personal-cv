@@ -14,7 +14,9 @@ export default function NotFound() {
                 priority
             />
 
-            <h1 className='mt-5 text-xl font-semibold text-zinc-900/30'>Error 1995 - Little Justin Found</h1>
+            <h1 className='mt-5 text-xl font-semibold text-zinc-900/30 dark:text-zinc-50'>
+                Error 1995 - Little Justin Found
+            </h1>
             <Link href='/' className='mt-3 text-blue-500 hover:underline'>
                 Go back home
             </Link>

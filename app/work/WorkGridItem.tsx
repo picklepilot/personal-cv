@@ -63,6 +63,7 @@ export default function WorkGridItem(props: any) {
                             <a
                                 href={project.url}
                                 className='group/more-btn relative z-10 mt-auto flex w-auto items-center justify-center space-x-1.5 rounded-full border border-white/8 bg-white/10 px-3 py-2 text-sm font-medium text-stone-900/80 shadow-lg shadow-black/5 backdrop-blur-md transition-all duration-300 hover:border-white/15 hover:bg-white/20 hover:shadow-xl hover:shadow-black/20 dark:border-white/10 dark:bg-white/5 dark:text-white dark:hover:border-white/30 dark:hover:bg-white/10'
+                                target={project.url.includes('http') ? '_blank' : undefined}
                             >
                                 <span className=''>View</span>
                                 <FontAwesomeIcon

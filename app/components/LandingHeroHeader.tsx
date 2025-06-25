@@ -24,7 +24,7 @@ export default function LandingHeroHeader() {
     })
 
     return (
-        <div className='absolute top-[400px] z-55 h-[80px] w-full transition-all duration-700 sm:top-[500px] sm:left-10'>
+        <div className='absolute top-[360px] z-55 h-[80px] w-full transition-all duration-700 sm:top-[500px] sm:left-10'>
             <AnimatePresence>
                 <motion.h1
                     className='mt-7 block text-center text-xl font-medium tracking-tight text-zinc-50/80 sm:mt-9 sm:text-center sm:text-3xl md:whitespace-nowrap lg:text-left dark:text-zinc-50/80'

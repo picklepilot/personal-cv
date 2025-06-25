@@ -18,17 +18,41 @@ export default function LandingHero() {
 
     const [snapPoint, setSnapPoint] = useState({ x: 94, y: 24 }) // Default values
     const [startingPosition, setStartingPosition] = useState({ x: 94, y: 24 }) // Default values
+    const containerRef = useRef<HTMLDivElement>(null)
 
-    // Update snap point and starting position based on window size
+    // Update snap point and starting position based on container size
     useEffect(() => {
         const updatePositions = () => {
-            const width = window.innerWidth
-            // const offset = width < 640 ? 30 : 80
-            setOffset(width < 640 ? 30 : 80)
+            if (!containerRef.current) return
+
+            const containerWidth = containerRef.current.offsetWidth
+            console.log('Container width:', containerWidth) // Debug log
+            setOffset(containerWidth < 640 ? 30 : 80)
+
+            // Breakpoint configuration for snap points (relative to the parent container's width)
+            const breakpoints = [
+                { maxWidth: 327, x: 134, y: -10 }, // iPhone SE
+                { maxWidth: 342, x: 142, y: -2 }, // iPhone 12 Pro
+                { maxWidth: 366, x: 151, y: 8 }, // iPhone SE
+                { maxWidth: 382, x: 157, y: 13 }, // iPhone 12 Pro
+                { maxWidth: 414, x: 151, y: -13 }, // iPhone XR
+                { maxWidth: 430, x: 155, y: 10 }, // iPhone 14 Pro Max
+                { maxWidth: 640, x: 155, y: -10 }, // Small tablets
+                { maxWidth: 720, x: 96, y: 2 }, // Tablets
+                { maxWidth: 768, x: 96, y: 26 }, // Tablets
+                // { maxWidth: 1024, x: 94, y: 24 }, // Small desktops
+                // { maxWidth: Infinity, x: 94, y: 24 }, // Large desktops
+            ]
+
+            // Find the appropriate breakpoint
+            const breakpoint =
+                breakpoints.find(bp => containerWidth <= bp.maxWidth) || breakpoints[breakpoints.length - 1]
+
             const newSnapPoint = {
-                x: width < 640 ? 155 : width < 768 ? 195 : width < 1024 ? 84 : 94,
-                y: width < 640 ? -10 : width < 768 ? 121 : width < 1024 ? 10 : 24,
+                x: breakpoint.x,
+                y: breakpoint.y,
             }
+
             setSnapPoint(newSnapPoint)
             setStartingPosition({
                 x: newSnapPoint.x,
@@ -39,11 +63,16 @@ export default function LandingHero() {
         // Initial update
         updatePositions()
 
-        // Add resize listener
-        window.addEventListener('resize', updatePositions)
+        // Add resize observer for container
+        const resizeObserver = new ResizeObserver(updatePositions)
+        if (containerRef.current) {
+            resizeObserver.observe(containerRef.current)
+        }
 
         // Cleanup
-        return () => window.removeEventListener('resize', updatePositions)
+        return () => {
+            resizeObserver.disconnect()
+        }
     }, [])
 
     // Define snap point (where sunglasses should naturally sit on the face)
@@ -212,7 +241,7 @@ export default function LandingHero() {
 
     return (
         <div
-            ref={constraintsRef}
+            ref={containerRef}
             className='absolute inset-0 overflow-hidden rounded-4xl bg-[#FFFFFF] dark:border-zinc-600 dark:bg-zinc-900'
         >
             <img
@@ -306,7 +335,7 @@ export default function LandingHero() {
                 <img
                     src='./sunglasses.png'
                     alt='Sunglasses'
-                    className='pointer-events-none aspect-auto h-auto w-[85px] -rotate-2 drop-shadow-lg md:w-[174px]'
+                    className='pointer-events-none aspect-auto h-auto w-[70px] -rotate-2 drop-shadow-lg @[366px]:w-[75px] @[375px]:w-[75px] @[382px]:w-[80px] @[390px]:w-[70px] @[414px]:w-[75px] @[430px]:w-[80px] @[640px]:w-[85px] @[720px]:w-[150px] @[768px]:w-[170px] @[1024px]:w-[174px]'
                 />
 
                 {/* Hover tooltip for when sunglasses are not on face */}

@@ -1,6 +1,6 @@
 'use client'
 
-import { faGraduationCap } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
+import { faGraduationCap, faVanShuttle } from '@awesome.me/kit-e9b483eadd/icons/classic/regular'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
@@ -21,22 +21,22 @@ const timeline = [
     //     content:
     //         "Since youth, I've been more concerned with the relative canvas and how all the things fit onto the canvas in a pleasing/meaningful way. I spent my high school years designing mixtape covers and flash websites for local artists, sometimes even getting paid!",
     // },
-    // {
-    //     id: 2,
-    //     logo: null,
-    //     role: 'Touring Musician',
-    //     company: 'Warner Music Group',
-    //     href: '#',
-    //     date: '2004 - 2008',
-    //     datetime: '2004-01-01',
-    //     icon: faVanShuttle,
-    //     iconBackground: null,
-    //     howItRelates:
-    //         'Being in a touring band taught me, from a young age, the importance of working well in a tight-knit team. No, not just a class project type team, but surviving on your own in the real world type teamwork.',
-    //     toolkitAdditions: ['Semantic HTML/5', 'PHP', 'MySQL', 'jQuery'],
-    //     content:
-    //         'While writing music and touring in an active rock band, I managed to start getting more into traditionally designed websites. Took on freelance work while touring.',
-    // },
+    {
+        id: 2,
+        logo: null,
+        role: 'Touring Musician',
+        company: 'Warner Music Group',
+        href: '#',
+        date: '2004 - 2008',
+        datetime: '2004-01-01',
+        icon: faVanShuttle,
+        iconBackground: null,
+        howItRelates:
+            'Being in a touring band taught me, from a young age, the importance of relying on a team to get the job done. Not just a class project type team, but surviving on your own in the real world type teamwork.',
+        toolkitAdditions: ['Semantic HTML/5', 'PHP', 'MySQL', 'jQuery'],
+        content:
+            'Being in a touring band taught me, from a young age, the importance of relying on a team to get the job done. Not just a class project type team, but surviving on your own in the real world type teamwork.',
+    },
     {
         id: 3,
         logo: null,
@@ -199,13 +199,16 @@ export default function LandingWorkTimeline() {
                                         </div>
                                         <div className='mb-3 flex min-w-0 flex-1 flex-wrap-reverse justify-between pt-1 md:flex-row md:space-x-4'>
                                             <div className='mt-1 md:mt-0'>
-                                                <div className='flex items-center justify-between'>
+                                                <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between'>
                                                     <div className='text-lg font-semibold'>{event.role}</div>
-                                                    <time className='text-sm text-zinc-500' dateTime={event.datetime}>
+                                                    <time
+                                                        className='text-xs text-zinc-500 sm:text-sm'
+                                                        dateTime={event.datetime}
+                                                    >
                                                         {event.date}
                                                     </time>
                                                 </div>
-                                                <div className='mt-0.5 flex items-center space-x-2 text-sm font-medium text-zinc-700'>
+                                                <div className='mt-2 flex items-center space-x-2 text-sm font-medium text-zinc-700 sm:mt-0.5'>
                                                     <span>{event.company}</span>
                                                     {event.href !== '#' && (
                                                         <span className='flex items-center space-x-2'>
