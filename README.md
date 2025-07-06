@@ -10,8 +10,9 @@ A quick and informative look into my background, skills, and projects. I will br
 
 ## TODO
 
-- [ ] Rotate FA code 🤦🏻
+- [ ] Replace FontAwesome with Lucide
 - [ ] Wrap all `<img>` in `<Image>` component
 - [x] Finalize the rotating hero text
-- [ ] Make sure the site is fully responsive
-- [ ] Fix some overzealous paddings/margins
+- [x] Make sure the site is fully responsive
+- [x] Fix some overzealous paddings/margins
+- [x] Migrate to PNPM
