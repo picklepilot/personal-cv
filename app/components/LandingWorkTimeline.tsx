@@ -32,10 +32,10 @@ const timeline = [
         icon: faVanShuttle,
         iconBackground: null,
         howItRelates:
-            'Being in a touring band taught me, from a young age, the importance of relying on a team to get the job done. Not just a class project type team, but surviving on your own in the real world type teamwork.',
-        toolkitAdditions: ['Semantic HTML/5', 'PHP', 'MySQL', 'jQuery'],
+            "Being in a touring band taught me the importance of relying on a team to get the job done as well as the indispensable quality of self-starting. Not just a class project type team, but surviving on your own in the real world type teamwork. These years were very formative for me, so it's always worth mentioning.<br/><br/>During my time on the road, I began to work freelance web design projects for other artists and bands.",
+        toolkitAdditions: [], // ['Semantic HTML/5', 'PHP', 'MySQL', 'jQuery'],
         content:
-            'Being in a touring band taught me, from a young age, the importance of relying on a team to get the job done. Not just a class project type team, but surviving on your own in the real world type teamwork.',
+            'Being in a touring band taught me the importance of relying on a team to get the job done as well as the indispensable quality of self-starting. I\'m talking less "class project" and more real world type teamwork. Those years were very formative for me, so it\'s always worth mentioning.<br/><br/>During my time on the road, I began to work freelance web design projects for other artists and bands—feeding myself in precisely the same way I do over two decades later 😂. Looking back, I consider myself fortunate that I was able to "find my passion while living my dream."',
     },
     {
         id: 3,
@@ -50,7 +50,7 @@ const timeline = [
         // toolkitAdditions: ['MVC Architecture', 'OOP', 'RESTful APIs', 'Collaboration/Teamwork', 'LAMP Stack', 'Java'],
         iconBackground: null,
         content:
-            '<ul class="list-disc pl-4"><li>Obtained my BA in Computer Science</li><li>President, Math & Computing Science Club</li><li>Provided mentorship and organized programming competitions</li></ul>',
+            '<ul class="list-disc pl-4"><li>Obtained my BA in Computer Science</li><li>President, Math & Computing Science Club</li><li>Provided mentorship and organized programming competitions</li><li>🏆 Award for Outstanding Service Contributing To the Improvement of Campus Life</li></ul>',
     },
     {
         id: 4,
@@ -233,7 +233,7 @@ export default function LandingWorkTimeline() {
 
                                                 {/* Toolkit Additions */}
                                                 {event.toolkitAdditions?.length > 0 && (
-                                                    <div className='mt-6 font-semibold text-zinc-900/40'>
+                                                    <div className='mt-6 font-semibold text-zinc-900/40 dark:text-zinc-100/40'>
                                                         Primary toolkit:
                                                     </div>
                                                 )}

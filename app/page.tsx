@@ -65,8 +65,9 @@ export default function Home() {
                 <ContinuousTimeline>
                     <PageHeader id='background' title='Background' theme={sectionHeaderTheme}>
                         <p className='lead'>
-                            Below is a timeline of my professional journey, interwoven with personal experiences that
-                            have shaped my approach to design and development.
+                            Hello, my name is <span className='font-medium'>Justin Kaczmar</span>. How about we just get
+                            right to it? Below is a timeline of my professional journey, beginning with a bit of life
+                            experience that laid the foundations to my approach to... well, everything.
                         </p>
                     </PageHeader>
                     <LandingWorkTimeline />
